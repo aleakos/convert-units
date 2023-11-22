@@ -2,8 +2,14 @@ import { Measure, Unit } from './../index.js';
 export type SpeedUnits = SpeedMetricUnits | SpeedImperialUnits;
 export type SpeedSystems = 'metric' | 'imperial';
 
-export type SpeedMetricUnits = 'm/s' | 'km/h' | 'mm/h';
-export type SpeedImperialUnits = 'mph' | 'knot' | 'ft/s' | 'ft/min' | 'in/h';
+export type SpeedMetricUnits = 'm/s' | 'km/h' | 'mm/h' | 'm/h';
+export type SpeedImperialUnits =
+  | 'mph'
+  | 'knot'
+  | 'ft/s'
+  | 'ft/min'
+  | 'in/h'
+  | 'ft/h';
 
 const metric: Record<SpeedMetricUnits, Unit> = {
   'm/s': {
@@ -26,6 +32,13 @@ const metric: Record<SpeedMetricUnits, Unit> = {
       plural: 'Millimeters per hour',
     },
     to_anchor: 0.000001,
+  },
+  'm/h': {
+    name: {
+      singular: 'Metre per hour',
+      plural: 'Metres per hour',
+    },
+    to_anchor: 0.001,
   },
 };
 
@@ -64,6 +77,13 @@ const imperial: Record<SpeedImperialUnits, Unit> = {
       plural: 'Inches per hour',
     },
     to_anchor: 0.00001578,
+  },
+  'ft/h': {
+    name: {
+      singular: 'Foot per hour',
+      plural: 'Feet per hour',
+    },
+    to_anchor: 0.000189394,
   },
 };
 

@@ -11,15 +11,32 @@ import apparentPower, {
 import area, { AreaSystems, AreaUnits } from './area.js';
 import charge, { ChargeSystems, ChargeUnits } from './charge.js';
 import current, { CurrentSystems, CurrentUnits } from './current.js';
+import density, { DensitySystems, DensityUnits } from './density.js';
 import digital, { DigitalSystems, DigitalUnits } from './digital.js';
 import each, { EachSystems, EachUnits } from './each.js';
 import energy, { EnergySystems, EnergyUnits } from './energy.js';
 import force, { ForceSystems, ForceUnits } from './force.js';
 import frequency, { FrequencySystems, FrequencyUnits } from './frequency.js';
+import heatCapacity, {
+  HeatCapacitySystems,
+  HeatCapacityUnits,
+} from './heatCapacity.js';
 import illuminance, {
   IlluminanceSystems,
   IlluminanceUnits,
 } from './illuminance.js';
+import inverseEnergy, {
+  InverseEnergySystems,
+  InverseEnergyUnits,
+} from './inverseEnergy.js';
+import inverseLength, {
+  InverseLengthSystems,
+  InverseLengthUnits,
+} from './inverseLength.js';
+import inverseTime, {
+  InverseTimeSystems,
+  InverseTimeUnits,
+} from './inverseTime.js';
 import length, { LengthSystems, LengthUnits } from './length.js';
 import mass, { MassSystems, MassUnits } from './mass.js';
 import massFlowRate, {
@@ -44,6 +61,18 @@ import temperature, {
   TemperatureSystems,
   TemperatureUnits,
 } from './temperature.js';
+import temperatureGradient, {
+  TemperatureGradientSystems,
+  TemperatureGradientUnits,
+} from './temperatureGradient.js';
+import thermalConductivity, {
+  ThermalConductivitySystems,
+  ThermalConductivityUnits,
+} from './thermalConductivity.js';
+import thermalResistance, {
+  ThermalResistanceSystems,
+  ThermalResistanceUnits,
+} from './thermalResistance.js';
 import time, { TimeSystems, TimeUnits } from './time.js';
 import torque, { TorqueSystems, TorqueUnits } from './torque.js';
 import voltage, { VoltageSystems, VoltageUnits } from './voltage.js';
@@ -59,13 +88,19 @@ export type AllMeasuresSystems =
   | ApparentPowerSystems
   | AreaSystems
   | ChargeSystems
+  | ThermalConductivitySystems
   | CurrentSystems
+  | DensitySystems
   | DigitalSystems
   | EachSystems
   | EnergySystems
   | ForceSystems
   | FrequencySystems
+  | HeatCapacitySystems
   | IlluminanceSystems
+  | InverseEnergySystems
+  | InverseLengthSystems
+  | InverseTimeSystems
   | LengthSystems
   | MassSystems
   | MassFlowRateSystems
@@ -76,9 +111,11 @@ export type AllMeasuresSystems =
   | PressureSystems
   | ReactiveEnergySystems
   | ReactivePowerSystems
+  | ThermalResistanceSystems
   | SpeedSystems
   | TorqueSystems
   | TemperatureSystems
+  | TemperatureGradientSystems
   | TimeSystems
   | VoltageSystems
   | VolumeSystems
@@ -90,13 +127,19 @@ export type AllMeasuresUnits =
   | ApparentPowerUnits
   | AreaUnits
   | ChargeUnits
+  | ThermalConductivityUnits
   | CurrentUnits
+  | DensityUnits
   | DigitalUnits
   | EachUnits
   | EnergyUnits
   | ForceUnits
   | FrequencyUnits
+  | HeatCapacityUnits
   | IlluminanceUnits
+  | InverseEnergyUnits
+  | InverseLengthUnits
+  | InverseTimeUnits
   | LengthUnits
   | MassUnits
   | MassFlowRateUnits
@@ -107,9 +150,11 @@ export type AllMeasuresUnits =
   | PressureUnits
   | ReactiveEnergyUnits
   | ReactivePowerUnits
+  | ThermalResistanceUnits
   | SpeedUnits
   | TorqueUnits
   | TemperatureUnits
+  | TemperatureGradientUnits
   | TimeUnits
   | VoltageUnits
   | VolumeUnits
@@ -121,13 +166,19 @@ export type AllMeasures =
   | 'apparentPower'
   | 'area'
   | 'charge'
+  | 'thermalConductivity'
   | 'current'
+  | 'density'
   | 'digital'
   | 'each'
   | 'energy'
   | 'force'
   | 'frequency'
+  | 'heatCapacity'
   | 'illuminance'
+  | 'inverseEnergy'
+  | 'inverseLength'
+  | 'inverseTime'
   | 'length'
   | 'mass'
   | 'massFlowRate'
@@ -138,9 +189,11 @@ export type AllMeasures =
   | 'pressure'
   | 'reactiveEnergy'
   | 'reactivePower'
+  | 'thermalResistance'
   | 'speed'
   | 'torque'
   | 'temperature'
+  | 'temperatureGradient'
   | 'time'
   | 'voltage'
   | 'volume'
@@ -155,13 +208,19 @@ const allMeasures: Record<
   apparentPower,
   area,
   charge,
+  thermalConductivity,
   current,
+  density,
   digital,
   each,
   energy,
   force,
   frequency,
+  heatCapacity,
   illuminance,
+  inverseEnergy,
+  inverseLength,
+  inverseTime,
   length,
   mass,
   massFlowRate,
@@ -172,9 +231,11 @@ const allMeasures: Record<
   pressure,
   reactiveEnergy,
   reactivePower,
+  thermalResistance,
   speed,
   torque,
   temperature,
+  temperatureGradient,
   time,
   voltage,
   volume,

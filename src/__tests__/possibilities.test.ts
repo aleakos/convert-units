@@ -15,6 +15,7 @@ import apparentPower, {
 } from '../definitions/apparentPower';
 import charge, { ChargeSystems, ChargeUnits } from '../definitions/charge';
 import current, { CurrentSystems, CurrentUnits } from '../definitions/current';
+import density, { DensitySystems, DensityUnits } from '../definitions/density';
 import digital, { DigitalSystems, DigitalUnits } from '../definitions/digital';
 import each, { EachSystems, EachUnits } from '../definitions/each';
 import energy, { EnergySystems, EnergyUnits } from '../definitions/energy';
@@ -23,10 +24,26 @@ import frequency, {
   FrequencySystems,
   FrequencyUnits,
 } from '../definitions/frequency';
+import heatCapacity, {
+  HeatCapacitySystems,
+  HeatCapacityUnits,
+} from '../definitions/heatCapacity';
 import illuminance, {
   IlluminanceSystems,
   IlluminanceUnits,
 } from '../definitions/illuminance';
+import inverseEnergy, {
+  InverseEnergySystems,
+  InverseEnergyUnits,
+} from '../definitions/inverseEnergy';
+import inverseLength, {
+  InverseLengthSystems,
+  InverseLengthUnits,
+} from '../definitions/inverseLength';
+import inverseTime, {
+  InverseTimeSystems,
+  InverseTimeUnits,
+} from '../definitions/inverseTime';
 import length, { LengthSystems, LengthUnits } from '../definitions/length';
 import mass, { MassSystems, MassUnits } from '../definitions/mass';
 import massFlowRate, {
@@ -57,6 +74,18 @@ import temperature, {
   TemperatureSystems,
   TemperatureUnits,
 } from '../definitions/temperature';
+import temperatureGradient, {
+  TemperatureGradientSystems,
+  TemperatureGradientUnits,
+} from '../definitions/temperatureGradient';
+import thermalConductivity, {
+  ThermalConductivitySystems,
+  ThermalConductivityUnits,
+} from '../definitions/thermalConductivity';
+import thermalResistance, {
+  ThermalResistanceSystems,
+  ThermalResistanceUnits,
+} from '../definitions/thermalResistance';
 import time, { TimeSystems, TimeUnits } from '../definitions/time';
 import torque, { TorqueSystems, TorqueUnits } from '../definitions/torque';
 import voltage, { VoltageSystems, VoltageUnits } from '../definitions/voltage';
@@ -163,7 +192,23 @@ test('mass flow rate possibilities', () => {
     massFlowRate,
   });
   const actual = convert().possibilities('massFlowRate'),
-    expected = ['kg/h', 'kg/s', 'lb/h', 'lb/s', 'mt/h'];
+    expected = [
+      'kg/h',
+      'kg/s',
+      'lb/h',
+      'lb/s',
+      'mt/h',
+      'ft3(cwe)/h',
+      'ft3(cwe)/min',
+      'ft3(cwe)/s',
+      'gal(cwe)/h',
+      'gal(cwe)/min',
+      'gal(cwe)/s',
+      'kg/min',
+      'l(cwe)/min',
+      'l(cwe)/s',
+      'm3(cwe)/h',
+    ];
   expect(actual.sort()).toEqual(expected.sort());
 });
 
@@ -325,6 +370,133 @@ test('digital possibilities', () => {
   expect(actual.sort()).toEqual(expected.sort());
 });
 
+test('density possibilities', () => {
+  const convert = configureMeasurements<
+    'density',
+    DensitySystems,
+    DensityUnits
+  >({
+    density,
+  });
+  const actual = convert().possibilities('density'),
+    expected = ['g/cm3', 'kg/m3', 'lb/ft3', 'sg'];
+  expect(actual.sort()).toEqual(expected.sort());
+});
+
+test('thermalConductivity possibilities', () => {
+  const convert = configureMeasurements<
+    'thermalConductivity',
+    ThermalConductivitySystems,
+    ThermalConductivityUnits
+  >({
+    thermalConductivity,
+  });
+  const actual = convert().possibilities('thermalConductivity'),
+    expected = ['BTU/h/ft/F', 'W/cm/K', 'W/m/K'];
+  expect(actual.sort()).toEqual(expected.sort());
+});
+
+test('heatCapacity possibilities', () => {
+  const convert = configureMeasurements<
+    'heatCapacity',
+    HeatCapacitySystems,
+    HeatCapacityUnits
+  >({
+    heatCapacity,
+  });
+  const actual = convert().possibilities('heatCapacity'),
+    expected = ['BTU/lb/F', 'J/kg/K', 'kJ/kg/K'];
+  expect(actual.sort()).toEqual(expected.sort());
+});
+
+test('temperatureGradient possibilities', () => {
+  const convert = configureMeasurements<
+    'temperatureGradient',
+    TemperatureGradientSystems,
+    TemperatureGradientUnits
+  >({
+    temperatureGradient,
+  });
+  const actual = convert().possibilities('temperatureGradient'),
+    expected = ['C/100m', 'C/km', 'C/m', 'F/100ft', 'F/ft'];
+  expect(actual.sort()).toEqual(expected.sort());
+});
+
+test('inverseLength possibilities', () => {
+  const convert = configureMeasurements<
+    'inverseLength',
+    InverseLengthSystems,
+    InverseLengthUnits
+  >({
+    inverseLength,
+  });
+  const actual = convert().possibilities('inverseLength'),
+    expected = ['/cm', '/ft', '/in', '/km', '/m', '/mi', '/mm'];
+  expect(actual.sort()).toEqual(expected.sort());
+});
+
+test('inverseTime possibilities', () => {
+  const convert = configureMeasurements<
+    'inverseTime',
+    InverseTimeSystems,
+    InverseTimeUnits
+  >({
+    inverseTime,
+  });
+  const actual = convert().possibilities('inverseTime'),
+    expected = [
+      '/d',
+      '/h',
+      '/min',
+      '/month',
+      '/ms',
+      '/mu',
+      '/ns',
+      '/s',
+      '/week',
+      '/year',
+    ];
+  expect(actual.sort()).toEqual(expected.sort());
+});
+
+test('inverseEnergy possibilities', () => {
+  const convert = configureMeasurements<
+    'inverseEnergy',
+    InverseEnergySystems,
+    InverseEnergyUnits
+  >({
+    inverseEnergy,
+  });
+  const actual = convert().possibilities('inverseEnergy'),
+    expected = [
+      '/GJ',
+      '/GWh',
+      '/J',
+      '/MJ',
+      '/MWh',
+      '/Wh',
+      '/Wm',
+      '/Ws',
+      '/kJ',
+      '/kWh',
+      '/mWh',
+    ];
+  expect(actual.sort()).toEqual(expected.sort());
+});
+
+test('thermalResistance possibilities', () => {
+  const convert = configureMeasurements<
+    'thermalResistance',
+    ThermalResistanceSystems,
+    ThermalResistanceUnits
+  >({
+    thermalResistance,
+  });
+  const actual = convert().possibilities('thermalResistance'),
+    expected = ['cmK/W', 'hftF/BTU', 'mK/W'];
+  expect(actual.sort()).toEqual(expected.sort());
+});
+
 test('partsPer possibilities', () => {
   const convert = configureMeasurements<
     'partsPer',
@@ -368,7 +540,18 @@ test('speed possibilities', () => {
     speed,
   });
   const actual = convert().possibilities('speed'),
-    expected = ['m/s', 'km/h', 'mph', 'knot', 'ft/s', 'ft/min', 'in/h', 'mm/h'];
+    expected = [
+      'm/s',
+      'km/h',
+      'mph',
+      'knot',
+      'ft/s',
+      'ft/min',
+      'in/h',
+      'mm/h',
+      'ft/h',
+      'm/h',
+    ];
   expect(actual.sort()).toEqual(expected.sort());
 });
 
@@ -570,13 +753,48 @@ test('all possibilities', () => {
   const actual = convert().possibilities(),
     // Please keep these sorted for maintainability
     expected = [
+      '/GJ',
+      '/GWh',
+      '/J',
+      '/MJ',
+      '/MWh',
+      '/Wh',
+      '/Wm',
+      '/Ws',
+      '/cm',
+      '/d',
+      '/ft',
+      '/h',
+      '/in',
+      '/kJ',
+      '/kWh',
+      '/km',
+      '/m',
+      '/mWh',
+      '/mi',
+      '/min',
+      '/mm',
+      '/month',
+      '/ms',
+      '/mu',
+      '/ns',
+      '/s',
+      '/week',
+      '/year',
       'A',
       'arcmin',
       'arcsec',
       'B',
+      'BTU/h/ft/F',
+      'BTU/lb/F',
       'Btu/s',
       'C',
+      'C/100m',
+      'C/km',
+      'C/m',
       'F',
+      'F/100ft',
+      'F/ft',
       'R',
       'GB',
       'Gb',
@@ -600,6 +818,7 @@ test('all possibilities', () => {
       'cm2',
       'cm3',
       'cm3/s',
+      'cmK/W',
       'cup',
       'cup/s',
       'd',
@@ -614,6 +833,7 @@ test('all possibilities', () => {
       'fl-oz/min',
       'fl-oz/s',
       'ft-us',
+      'ft/h',
       'ft',
       'fathom',
       'ft-cd',
@@ -622,12 +842,19 @@ test('all possibilities', () => {
       'ft/s',
       'ft2',
       'ft3',
+      'ft3(cwe)/h',
+      'ft3(cwe)/min',
+      'ft3(cwe)/s',
       'ft3/h',
       'ft3/min',
       'ft3/s',
       'g',
       'g-force',
+      'g/cm3',
       'gal',
+      'gal(cwe)/h',
+      'gal(cwe)/min',
+      'gal(cwe)/s',
       'gal/h',
       'gal/min',
       'gal/s',
@@ -653,6 +880,7 @@ test('all possibilities', () => {
       'in3/s',
       'inHg',
       'J',
+      'J/kg/K',
       'kA',
       'kPa',
       'kanna',
@@ -660,6 +888,7 @@ test('all possibilities', () => {
       'kgf',
       'kkp',
       'kJ',
+      'kJ/kg/K',
       'lb/h',
       'lb/s',
       'MJ',
@@ -669,6 +898,8 @@ test('all possibilities', () => {
       'Ml',
       'Gl',
       'kg/h',
+      'kg/m3',
+      'kg/min',
       'kg/s',
       'kl/h',
       'kl/min',
@@ -679,6 +910,7 @@ test('all possibilities', () => {
       'km3',
       'km3/s',
       'knot',
+      'm/h',
       'krm',
       'ksi',
       'kHz',
@@ -690,7 +922,10 @@ test('all possibilities', () => {
       'kWh',
       'l',
       'lbf-ft',
+      'lb/ft3',
       'l/h',
+      'l(cwe)/min',
+      'l(cwe)/s',
       'l/min',
       'l/s',
       'lb',
@@ -702,6 +937,7 @@ test('all possibilities', () => {
       'm2',
       'm3',
       'm3/h',
+      'm3(cwe)/h',
       'm3/min',
       'm3/s',
       'mA',
@@ -735,6 +971,7 @@ test('all possibilities', () => {
       'Nm',
       'nm2',
       'mHz',
+      'mK/W',
       'MHz',
       'mV',
       'mVA',
@@ -767,6 +1004,7 @@ test('all possibilities', () => {
       'rad/s',
       'rpm',
       's',
+      'sg',
       's/m',
       's/ft',
       't',
@@ -782,6 +1020,8 @@ test('all possibilities', () => {
       'VAR',
       'VARh',
       'W',
+      'W/cm/K',
+      'W/m/K',
       'week',
       'Ws',
       'Wm',
@@ -804,6 +1044,7 @@ test('all possibilities', () => {
       'gr-gr',
       'gros',
       'half-dozen',
+      'hftF/BTU',
       'long-hundred',
       'ream',
       'scores',

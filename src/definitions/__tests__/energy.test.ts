@@ -26,28 +26,28 @@ test('Ws to mWh', () => {
   const convert = configureMeasurements<'energy', EnergySystems, EnergyUnits>({
     energy,
   });
-  expect(convert(1).from('Ws').to('mWh')).toBeCloseTo(0.277_778);
+  expect(convert(1).from('Ws').to('mWh')).toBeCloseTo(0.277_778, 5);
 });
 
 test('Ws to kWh', () => {
   const convert = configureMeasurements<'energy', EnergySystems, EnergyUnits>({
     energy,
   });
-  expect(convert(1).from('Ws').to('kWh')).toBeCloseTo(0.000_277_778);
+  expect(convert(1).from('Ws').to('kWh')).toBeCloseTo(2.7778e-7, 10);
 });
 
 test('Ws to MWh', () => {
   const convert = configureMeasurements<'energy', EnergySystems, EnergyUnits>({
     energy,
   });
-  expect(convert(1).from('Ws').to('MWh')).toBeCloseTo(0.000_000_277_778);
+  expect(convert(1).from('Ws').to('MWh')).toBeCloseTo(2.77778e-10, 10);
 });
 
 test('Ws to GWh', () => {
   const convert = configureMeasurements<'energy', EnergySystems, EnergyUnits>({
     energy,
   });
-  expect(convert(1).from('Ws').to('GWh')).toBeCloseTo(0.000_000_000_277_778);
+  expect(convert(1).from('Ws').to('GWh')).toBeCloseTo(2.77778e-13, 10);
 });
 
 test('Ws to J', () => {

@@ -70,3 +70,59 @@ test('in/s to mm/s', () => {
   });
   expect(convert(1).from('in/h').to('mm/h')).toBeCloseTo(25.4);
 });
+
+test('ft/h to mph', () => {
+  const convert = configureMeasurements<'speed', SpeedSystems, SpeedUnits>({
+    speed,
+  });
+  expect(convert(1).from('ft/h').to('mph')).toBeCloseTo(0.000189394, 5);
+});
+
+test('mph to ft/h', () => {
+  const convert = configureMeasurements<'speed', SpeedSystems, SpeedUnits>({
+    speed,
+  });
+  expect(convert(1).from('mph').to('ft/h')).toBeCloseTo(5280);
+});
+
+test('ft/h to m/s', () => {
+  const convert = configureMeasurements<'speed', SpeedSystems, SpeedUnits>({
+    speed,
+  });
+  expect(convert(1).from('ft/h').to('m/s')).toBeCloseTo(0.0000846667, 5);
+});
+
+test('m/s to ft/h', () => {
+  const convert = configureMeasurements<'speed', SpeedSystems, SpeedUnits>({
+    speed,
+  });
+  expect(convert(1).from('m/s').to('ft/h')).toBeCloseTo(11811, 1);
+});
+
+test('m/h to km/h', () => {
+  const convert = configureMeasurements<'speed', SpeedSystems, SpeedUnits>({
+    speed,
+  });
+  expect(convert(1).from('m/h').to('km/h')).toBeCloseTo(0.001);
+});
+
+test('km/h to m/h', () => {
+  const convert = configureMeasurements<'speed', SpeedSystems, SpeedUnits>({
+    speed,
+  });
+  expect(convert(1).from('km/h').to('m/h')).toBeCloseTo(1000);
+});
+
+test('m/h to mph', () => {
+  const convert = configureMeasurements<'speed', SpeedSystems, SpeedUnits>({
+    speed,
+  });
+  expect(convert(1).from('m/h').to('mph')).toBeCloseTo(0.00062137, 5);
+});
+
+test('mph to m/h', () => {
+  const convert = configureMeasurements<'speed', SpeedSystems, SpeedUnits>({
+    speed,
+  });
+  expect(convert(1).from('mph').to('m/h')).toBeCloseTo(1609.34, 2);
+});
