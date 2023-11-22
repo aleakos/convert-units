@@ -53,12 +53,12 @@ import reactivePower, {
   ReactivePowerUnits,
 } from '../definitions/reactivePower';
 import speed, { SpeedSystems, SpeedUnits } from '../definitions/speed';
-import torque, { TorqueSystems, TorqueUnits } from '../definitions/torque';
 import temperature, {
   TemperatureSystems,
   TemperatureUnits,
 } from '../definitions/temperature';
 import time, { TimeSystems, TimeUnits } from '../definitions/time';
+import torque, { TorqueSystems, TorqueUnits } from '../definitions/torque';
 import voltage, { VoltageSystems, VoltageUnits } from '../definitions/voltage';
 import volume, { VolumeSystems, VolumeUnits } from '../definitions/volume';
 import volumeFlowRate, {

@@ -408,7 +408,7 @@ export class Converter<
   }
 }
 
-export default function <
+export const configMeasurements = function <
   TMeasures extends string,
   TSystems extends string,
   TUnits extends string
@@ -417,4 +417,4 @@ export default function <
 ): (value?: number) => Converter<TMeasures, TSystems, TUnits> {
   return (value?: number) =>
     new Converter<TMeasures, TSystems, TUnits>(measures, value);
-}
+};
