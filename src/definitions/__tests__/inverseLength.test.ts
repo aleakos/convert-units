@@ -1,11 +1,11 @@
-import configureMeasurements from '../..';
+import { configMeasurements } from '../..';
 import inverseLength, {
   InverseLengthSystems,
   InverseLengthUnits,
 } from '../inverseLength';
 
 test('/ft to /ft', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseLength',
     InverseLengthSystems,
     InverseLengthUnits
@@ -16,7 +16,7 @@ test('/ft to /ft', () => {
 });
 
 test('/in to /in', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseLength',
     InverseLengthSystems,
     InverseLengthUnits
@@ -27,7 +27,7 @@ test('/in to /in', () => {
 });
 
 test('/ft to /in', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseLength',
     InverseLengthSystems,
     InverseLengthUnits
@@ -38,7 +38,7 @@ test('/ft to /in', () => {
 });
 
 test('/in to /ft', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseLength',
     InverseLengthSystems,
     InverseLengthUnits
@@ -49,7 +49,7 @@ test('/in to /ft', () => {
 });
 
 test('/ft to /mi', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseLength',
     InverseLengthSystems,
     InverseLengthUnits
@@ -60,7 +60,7 @@ test('/ft to /mi', () => {
 });
 
 test('/mi to /ft', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseLength',
     InverseLengthSystems,
     InverseLengthUnits
@@ -71,7 +71,7 @@ test('/mi to /ft', () => {
 });
 
 test('/m to /m', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseLength',
     InverseLengthSystems,
     InverseLengthUnits
@@ -82,7 +82,7 @@ test('/m to /m', () => {
 });
 
 test('/m to /cm', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseLength',
     InverseLengthSystems,
     InverseLengthUnits
@@ -93,7 +93,7 @@ test('/m to /cm', () => {
 });
 
 test('/cm to /m', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseLength',
     InverseLengthSystems,
     InverseLengthUnits
@@ -104,7 +104,7 @@ test('/cm to /m', () => {
 });
 
 test('/m to /mm', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseLength',
     InverseLengthSystems,
     InverseLengthUnits
@@ -115,7 +115,7 @@ test('/m to /mm', () => {
 });
 
 test('/km to /m', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseLength',
     InverseLengthSystems,
     InverseLengthUnits
@@ -126,7 +126,7 @@ test('/km to /m', () => {
 });
 
 test('/m to /ft', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseLength',
     InverseLengthSystems,
     InverseLengthUnits
@@ -137,7 +137,7 @@ test('/m to /ft', () => {
 });
 
 test('/mm to /ft', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseLength',
     InverseLengthSystems,
     InverseLengthUnits

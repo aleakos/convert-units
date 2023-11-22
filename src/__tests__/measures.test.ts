@@ -1,4 +1,4 @@
-import configureMeasurements from '..';
+import { configMeasurements } from '..';
 import allMeasures, {
   AllMeasures,
   AllMeasuresSystems,
@@ -6,7 +6,7 @@ import allMeasures, {
 } from '../definitions/all';
 
 test('measures', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     AllMeasures,
     AllMeasuresSystems,
     AllMeasuresUnits

@@ -1,8 +1,8 @@
-import configureMeasurements from '../..';
+import { configMeasurements } from '../..';
 import frequency, { FrequencySystems, FrequencyUnits } from '../frequency';
 
 test('Hz to Hz', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'frequency',
     FrequencySystems,
     FrequencyUnits
@@ -13,7 +13,7 @@ test('Hz to Hz', () => {
 });
 
 test('mHz to mHz', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'frequency',
     FrequencySystems,
     FrequencyUnits
@@ -24,7 +24,7 @@ test('mHz to mHz', () => {
 });
 
 test('kHz to kHz', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'frequency',
     FrequencySystems,
     FrequencyUnits
@@ -35,7 +35,7 @@ test('kHz to kHz', () => {
 });
 
 test('MHz to MHz', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'frequency',
     FrequencySystems,
     FrequencyUnits
@@ -46,7 +46,7 @@ test('MHz to MHz', () => {
 });
 
 test('GHz to GHz', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'frequency',
     FrequencySystems,
     FrequencyUnits
@@ -57,7 +57,7 @@ test('GHz to GHz', () => {
 });
 
 test('THz to THz', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'frequency',
     FrequencySystems,
     FrequencyUnits
@@ -68,7 +68,7 @@ test('THz to THz', () => {
 });
 
 test('rpm to rpm', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'frequency',
     FrequencySystems,
     FrequencyUnits
@@ -79,7 +79,7 @@ test('rpm to rpm', () => {
 });
 
 test('deg/s to deg/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'frequency',
     FrequencySystems,
     FrequencyUnits
@@ -90,7 +90,7 @@ test('deg/s to deg/s', () => {
 });
 
 test('rad/s to rad/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'frequency',
     FrequencySystems,
     FrequencyUnits
@@ -101,7 +101,7 @@ test('rad/s to rad/s', () => {
 });
 
 test('rpm to Hz', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'frequency',
     FrequencySystems,
     FrequencyUnits
@@ -112,7 +112,7 @@ test('rpm to Hz', () => {
 });
 
 test('deg/s to Hz', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'frequency',
     FrequencySystems,
     FrequencyUnits
@@ -123,7 +123,7 @@ test('deg/s to Hz', () => {
 });
 
 test('rad/s to Hz', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'frequency',
     FrequencySystems,
     FrequencyUnits
@@ -134,7 +134,7 @@ test('rad/s to Hz', () => {
 });
 
 test('THz to GHz', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'frequency',
     FrequencySystems,
     FrequencyUnits
@@ -145,7 +145,7 @@ test('THz to GHz', () => {
 });
 
 test('mHz to MHz', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'frequency',
     FrequencySystems,
     FrequencyUnits

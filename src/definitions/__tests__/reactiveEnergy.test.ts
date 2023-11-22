@@ -1,11 +1,11 @@
-import configureMeasurements from '../..';
+import { configMeasurements } from '../..';
 import reactiveEnergy, {
   ReactiveEnergySystems,
   ReactiveEnergyUnits,
 } from '../reactiveEnergy';
 
 test('VARh to VARh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactiveEnergy',
     ReactiveEnergySystems,
     ReactiveEnergyUnits
@@ -16,7 +16,7 @@ test('VARh to VARh', () => {
 });
 
 test('mVARh to mVARh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactiveEnergy',
     ReactiveEnergySystems,
     ReactiveEnergyUnits
@@ -27,7 +27,7 @@ test('mVARh to mVARh', () => {
 });
 
 test('kVARh to kVARh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactiveEnergy',
     ReactiveEnergySystems,
     ReactiveEnergyUnits
@@ -38,7 +38,7 @@ test('kVARh to kVARh', () => {
 });
 
 test('MVARh to MVARh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactiveEnergy',
     ReactiveEnergySystems,
     ReactiveEnergyUnits
@@ -49,7 +49,7 @@ test('MVARh to MVARh', () => {
 });
 
 test('GVARh to GVARh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactiveEnergy',
     ReactiveEnergySystems,
     ReactiveEnergyUnits
@@ -60,7 +60,7 @@ test('GVARh to GVARh', () => {
 });
 
 test('VARh to mVARh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactiveEnergy',
     ReactiveEnergySystems,
     ReactiveEnergyUnits
@@ -71,7 +71,7 @@ test('VARh to mVARh', () => {
 });
 
 test('VARh to kVARh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactiveEnergy',
     ReactiveEnergySystems,
     ReactiveEnergyUnits
@@ -82,7 +82,7 @@ test('VARh to kVARh', () => {
 });
 
 test('VARh to MVARh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactiveEnergy',
     ReactiveEnergySystems,
     ReactiveEnergyUnits
@@ -93,7 +93,7 @@ test('VARh to MVARh', () => {
 });
 
 test('VARh to GVARh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactiveEnergy',
     ReactiveEnergySystems,
     ReactiveEnergyUnits
@@ -104,7 +104,7 @@ test('VARh to GVARh', () => {
 });
 
 test('GVARh to mVARh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactiveEnergy',
     ReactiveEnergySystems,
     ReactiveEnergyUnits
@@ -115,7 +115,7 @@ test('GVARh to mVARh', () => {
 });
 
 test('MVARh to mVARh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactiveEnergy',
     ReactiveEnergySystems,
     ReactiveEnergyUnits
@@ -126,7 +126,7 @@ test('MVARh to mVARh', () => {
 });
 
 test('kVARh to mVARh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactiveEnergy',
     ReactiveEnergySystems,
     ReactiveEnergyUnits
@@ -137,7 +137,7 @@ test('kVARh to mVARh', () => {
 });
 
 test('mVARh to kVARh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactiveEnergy',
     ReactiveEnergySystems,
     ReactiveEnergyUnits
@@ -148,7 +148,7 @@ test('mVARh to kVARh', () => {
 });
 
 test('mVARh to VARh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactiveEnergy',
     ReactiveEnergySystems,
     ReactiveEnergyUnits
@@ -159,7 +159,7 @@ test('mVARh to VARh', () => {
 });
 
 test('kVARh to VARh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactiveEnergy',
     ReactiveEnergySystems,
     ReactiveEnergyUnits

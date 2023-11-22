@@ -1,4 +1,4 @@
-import configureMeasurements from '..';
+import { configMeasurements } from '..';
 import acceleration, {
   AccelerationSystems,
   AccelerationUnits,
@@ -96,7 +96,7 @@ import volumeFlowRate, {
 } from '../definitions/volumeFlowRate';
 
 test('l possibilities', () => {
-  const convert = configureMeasurements<'volume', VolumeSystems, VolumeUnits>({
+  const convert = configMeasurements<'volume', VolumeSystems, VolumeUnits>({
     volume,
   });
   const actual = convert().from('l').possibilities(),
@@ -133,7 +133,7 @@ test('l possibilities', () => {
 });
 
 test('kg possibilities', () => {
-  const convert = configureMeasurements<'mass', MassSystems, MassUnits>({
+  const convert = configMeasurements<'mass', MassSystems, MassUnits>({
     mass,
   });
   const actual = convert().from('kg').possibilities(),
@@ -142,7 +142,7 @@ test('kg possibilities', () => {
 });
 
 test('m possibilities', () => {
-  const convert = configureMeasurements<'length', LengthSystems, LengthUnits>({
+  const convert = configMeasurements<'length', LengthSystems, LengthUnits>({
     length,
   });
   const actual = convert().from('m').possibilities(),
@@ -166,7 +166,7 @@ test('m possibilities', () => {
 });
 
 test('each possibilities', () => {
-  const convert = configureMeasurements<'each', EachSystems, EachUnits>({
+  const convert = configMeasurements<'each', EachSystems, EachUnits>({
     each,
   });
   const actual = convert().possibilities('each'),
@@ -175,7 +175,7 @@ test('each possibilities', () => {
 });
 
 test('mass possibilities', () => {
-  const convert = configureMeasurements<'mass', MassSystems, MassUnits>({
+  const convert = configMeasurements<'mass', MassSystems, MassUnits>({
     mass,
   });
   const actual = convert().possibilities('mass'),
@@ -184,7 +184,7 @@ test('mass possibilities', () => {
 });
 
 test('mass flow rate possibilities', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -213,7 +213,7 @@ test('mass flow rate possibilities', () => {
 });
 
 test('volume possibilities', () => {
-  const convert = configureMeasurements<'volume', VolumeSystems, VolumeUnits>({
+  const convert = configMeasurements<'volume', VolumeSystems, VolumeUnits>({
     volume,
   });
   const actual = convert().possibilities('volume'),
@@ -250,7 +250,7 @@ test('volume possibilities', () => {
 });
 
 test('volume flow rate possibilities', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -301,7 +301,7 @@ test('volume flow rate possibilities', () => {
 });
 
 test('length possibilities', () => {
-  const convert = configureMeasurements<'length', LengthSystems, LengthUnits>({
+  const convert = configMeasurements<'length', LengthSystems, LengthUnits>({
     length,
   });
   const actual = convert().possibilities('length'),
@@ -325,7 +325,7 @@ test('length possibilities', () => {
 });
 
 test('temperature possibilities', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperature',
     TemperatureSystems,
     TemperatureUnits
@@ -338,7 +338,7 @@ test('temperature possibilities', () => {
 });
 
 test('time possibilities', () => {
-  const convert = configureMeasurements<'time', TimeSystems, TimeUnits>({
+  const convert = configMeasurements<'time', TimeSystems, TimeUnits>({
     time,
   });
   const actual = convert().possibilities('time'),
@@ -358,11 +358,7 @@ test('time possibilities', () => {
 });
 
 test('digital possibilities', () => {
-  const convert = configureMeasurements<
-    'digital',
-    DigitalSystems,
-    DigitalUnits
-  >({
+  const convert = configMeasurements<'digital', DigitalSystems, DigitalUnits>({
     digital,
   });
   const actual = convert().possibilities('digital'),
@@ -371,11 +367,7 @@ test('digital possibilities', () => {
 });
 
 test('density possibilities', () => {
-  const convert = configureMeasurements<
-    'density',
-    DensitySystems,
-    DensityUnits
-  >({
+  const convert = configMeasurements<'density', DensitySystems, DensityUnits>({
     density,
   });
   const actual = convert().possibilities('density'),
@@ -384,7 +376,7 @@ test('density possibilities', () => {
 });
 
 test('thermalConductivity possibilities', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'thermalConductivity',
     ThermalConductivitySystems,
     ThermalConductivityUnits
@@ -397,7 +389,7 @@ test('thermalConductivity possibilities', () => {
 });
 
 test('heatCapacity possibilities', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'heatCapacity',
     HeatCapacitySystems,
     HeatCapacityUnits
@@ -410,7 +402,7 @@ test('heatCapacity possibilities', () => {
 });
 
 test('temperatureGradient possibilities', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperatureGradient',
     TemperatureGradientSystems,
     TemperatureGradientUnits
@@ -423,7 +415,7 @@ test('temperatureGradient possibilities', () => {
 });
 
 test('inverseLength possibilities', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseLength',
     InverseLengthSystems,
     InverseLengthUnits
@@ -436,7 +428,7 @@ test('inverseLength possibilities', () => {
 });
 
 test('inverseTime possibilities', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseTime',
     InverseTimeSystems,
     InverseTimeUnits
@@ -460,7 +452,7 @@ test('inverseTime possibilities', () => {
 });
 
 test('inverseEnergy possibilities', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -485,7 +477,7 @@ test('inverseEnergy possibilities', () => {
 });
 
 test('thermalResistance possibilities', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'thermalResistance',
     ThermalResistanceSystems,
     ThermalResistanceUnits
@@ -498,7 +490,7 @@ test('thermalResistance possibilities', () => {
 });
 
 test('partsPer possibilities', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'partsPer',
     PartsPerSystems,
     PartsPerUnits
@@ -511,7 +503,7 @@ test('partsPer possibilities', () => {
 });
 
 test('pressure possibilities', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'pressure',
     PressureSystems,
     PressureUnits
@@ -536,7 +528,7 @@ test('pressure possibilities', () => {
 });
 
 test('speed possibilities', () => {
-  const convert = configureMeasurements<'speed', SpeedSystems, SpeedUnits>({
+  const convert = configMeasurements<'speed', SpeedSystems, SpeedUnits>({
     speed,
   });
   const actual = convert().possibilities('speed'),
@@ -556,7 +548,7 @@ test('speed possibilities', () => {
 });
 
 test('torque possibilities', () => {
-  const convert = configureMeasurements<'torque', TorqueSystems, TorqueUnits>({
+  const convert = configMeasurements<'torque', TorqueSystems, TorqueUnits>({
     torque,
   });
   const actual = convert().possibilities('torque'),
@@ -565,7 +557,7 @@ test('torque possibilities', () => {
 });
 
 test('pace possibilities', () => {
-  const convert = configureMeasurements<'pace', PaceSystems, PaceUnits>({
+  const convert = configMeasurements<'pace', PaceSystems, PaceUnits>({
     pace,
   });
   const actual = convert().possibilities('pace'),
@@ -574,11 +566,7 @@ test('pace possibilities', () => {
 });
 
 test('current possibilities', () => {
-  const convert = configureMeasurements<
-    'current',
-    CurrentSystems,
-    CurrentUnits
-  >({
+  const convert = configMeasurements<'current', CurrentSystems, CurrentUnits>({
     current,
   });
   const actual = convert().possibilities('current'),
@@ -587,11 +575,7 @@ test('current possibilities', () => {
 });
 
 test('voltage possibilities', () => {
-  const convert = configureMeasurements<
-    'voltage',
-    VoltageSystems,
-    VoltageUnits
-  >({
+  const convert = configMeasurements<'voltage', VoltageSystems, VoltageUnits>({
     voltage,
   });
   const actual = convert().possibilities('voltage'),
@@ -600,7 +584,7 @@ test('voltage possibilities', () => {
 });
 
 test('power possibilities', () => {
-  const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
+  const convert = configMeasurements<'power', PowerSystems, PowerUnits>({
     power,
   });
   const actual = convert().possibilities('power'),
@@ -609,7 +593,7 @@ test('power possibilities', () => {
 });
 
 test('reactive power possibilities', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactivePower',
     ReactivePowerSystems,
     ReactivePowerUnits
@@ -622,7 +606,7 @@ test('reactive power possibilities', () => {
 });
 
 test('apparent power possibilities', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'apparentPower',
     ApparentPowerSystems,
     ApparentPowerUnits
@@ -635,7 +619,7 @@ test('apparent power possibilities', () => {
 });
 
 test('energy possibilities', () => {
-  const convert = configureMeasurements<'energy', EnergySystems, EnergyUnits>({
+  const convert = configMeasurements<'energy', EnergySystems, EnergyUnits>({
     energy,
   });
   const actual = convert().possibilities('energy'),
@@ -656,7 +640,7 @@ test('energy possibilities', () => {
 });
 
 test('reactive energy possibilities', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactiveEnergy',
     ReactiveEnergySystems,
     ReactiveEnergyUnits
@@ -669,7 +653,7 @@ test('reactive energy possibilities', () => {
 });
 
 test('frequency possibilities', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'frequency',
     FrequencySystems,
     FrequencyUnits
@@ -692,7 +676,7 @@ test('frequency possibilities', () => {
 });
 
 test('illuminance possibilities', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'illuminance',
     IlluminanceSystems,
     IlluminanceUnits
@@ -705,7 +689,7 @@ test('illuminance possibilities', () => {
 });
 
 test('angle possibilities', () => {
-  const convert = configureMeasurements<'angle', AngleSystems, AngleUnits>({
+  const convert = configMeasurements<'angle', AngleSystems, AngleUnits>({
     angle,
   });
   const actual = convert().possibilities('angle'),
@@ -714,7 +698,7 @@ test('angle possibilities', () => {
 });
 
 test('charge possibilities', () => {
-  const convert = configureMeasurements<'charge', ChargeSystems, ChargeUnits>({
+  const convert = configMeasurements<'charge', ChargeSystems, ChargeUnits>({
     charge,
   });
   const actual = convert().possibilities('charge'),
@@ -723,7 +707,7 @@ test('charge possibilities', () => {
 });
 
 test('force possibilities', () => {
-  const convert = configureMeasurements<'force', ForceSystems, ForceUnits>({
+  const convert = configMeasurements<'force', ForceSystems, ForceUnits>({
     force,
   });
   const actual = convert().possibilities('force'),
@@ -732,7 +716,7 @@ test('force possibilities', () => {
 });
 
 test('acceleration possibilities', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'acceleration',
     AccelerationSystems,
     AccelerationUnits
@@ -745,7 +729,7 @@ test('acceleration possibilities', () => {
 });
 
 test('all possibilities', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     AllMeasures,
     AllMeasuresSystems,
     AllMeasuresUnits
@@ -1056,7 +1040,7 @@ test('all possibilities', () => {
 });
 
 test('pieces possibilities', () => {
-  const convert = configureMeasurements<'pieces', PiecesSystems, PiecesUnits>({
+  const convert = configMeasurements<'pieces', PiecesSystems, PiecesUnits>({
     pieces,
   });
   const actual = convert().possibilities('pieces'),

@@ -1,11 +1,11 @@
-import configureMeasurements from '../..';
+import { configMeasurements } from '../..';
 import thermalResistance, {
   ThermalResistanceSystems,
   ThermalResistanceUnits,
 } from '../thermalResistance';
 
 test('mK/W to mK/W', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'thermalResistance',
     ThermalResistanceSystems,
     ThermalResistanceUnits
@@ -16,7 +16,7 @@ test('mK/W to mK/W', () => {
 });
 
 test('mK/W to cmK/W', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'thermalResistance',
     ThermalResistanceSystems,
     ThermalResistanceUnits
@@ -27,7 +27,7 @@ test('mK/W to cmK/W', () => {
 });
 
 test('mK/W to hftF/BTU', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'thermalResistance',
     ThermalResistanceSystems,
     ThermalResistanceUnits
@@ -40,7 +40,7 @@ test('mK/W to hftF/BTU', () => {
 });
 
 test('cmK/W to mK/W', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'thermalResistance',
     ThermalResistanceSystems,
     ThermalResistanceUnits
@@ -51,7 +51,7 @@ test('cmK/W to mK/W', () => {
 });
 
 test('cmK/W to hftF/BTU', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'thermalResistance',
     ThermalResistanceSystems,
     ThermalResistanceUnits
@@ -64,7 +64,7 @@ test('cmK/W to hftF/BTU', () => {
 });
 
 test('hftF/BTU to mK/W', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'thermalResistance',
     ThermalResistanceSystems,
     ThermalResistanceUnits
@@ -77,7 +77,7 @@ test('hftF/BTU to mK/W', () => {
 });
 
 test('hftF/BTU to cmK/W', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'thermalResistance',
     ThermalResistanceSystems,
     ThermalResistanceUnits

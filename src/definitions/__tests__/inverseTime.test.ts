@@ -1,11 +1,11 @@
-import configureMeasurements from '../..';
+import { configMeasurements } from '../..';
 import inverseTime, {
   InverseTimeSystems,
   InverseTimeUnits,
 } from '../inverseTime';
 
 test('/ns to /s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseTime',
     InverseTimeSystems,
     InverseTimeUnits
@@ -16,7 +16,7 @@ test('/ns to /s', () => {
 });
 
 test('/mu to /s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseTime',
     InverseTimeSystems,
     InverseTimeUnits
@@ -27,7 +27,7 @@ test('/mu to /s', () => {
 });
 
 test('/ms to /s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseTime',
     InverseTimeSystems,
     InverseTimeUnits
@@ -38,7 +38,7 @@ test('/ms to /s', () => {
 });
 
 test('/min to /s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseTime',
     InverseTimeSystems,
     InverseTimeUnits
@@ -49,7 +49,7 @@ test('/min to /s', () => {
 });
 
 test('/s to /s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseTime',
     InverseTimeSystems,
     InverseTimeUnits
@@ -60,7 +60,7 @@ test('/s to /s', () => {
 });
 
 test('/h to /s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseTime',
     InverseTimeSystems,
     InverseTimeUnits
@@ -71,7 +71,7 @@ test('/h to /s', () => {
 });
 
 test('/d to /s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseTime',
     InverseTimeSystems,
     InverseTimeUnits
@@ -82,7 +82,7 @@ test('/d to /s', () => {
 });
 
 test('/week to /d', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseTime',
     InverseTimeSystems,
     InverseTimeUnits
@@ -93,7 +93,7 @@ test('/week to /d', () => {
 });
 
 test('/month to /d', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseTime',
     InverseTimeSystems,
     InverseTimeUnits
@@ -104,7 +104,7 @@ test('/month to /d', () => {
 });
 
 test('/d to /year', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseTime',
     InverseTimeSystems,
     InverseTimeUnits
@@ -115,7 +115,7 @@ test('/d to /year', () => {
 });
 
 test('/month to /week', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseTime',
     InverseTimeSystems,
     InverseTimeUnits
@@ -126,7 +126,7 @@ test('/month to /week', () => {
 });
 
 test('/year to /week', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseTime',
     InverseTimeSystems,
     InverseTimeUnits
@@ -137,7 +137,7 @@ test('/year to /week', () => {
 });
 
 test('/year to /month', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseTime',
     InverseTimeSystems,
     InverseTimeUnits

@@ -1,11 +1,11 @@
-import configureMeasurements from '../..';
+import { configMeasurements } from '../..';
 import temperature, {
   TemperatureSystems,
   TemperatureUnits,
 } from '../temperature';
 
 test('C to K', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperature',
     TemperatureSystems,
     TemperatureUnits
@@ -16,7 +16,7 @@ test('C to K', () => {
 });
 
 test('K to C', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperature',
     TemperatureSystems,
     TemperatureUnits
@@ -27,7 +27,7 @@ test('K to C', () => {
 });
 
 test('F to C', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperature',
     TemperatureSystems,
     TemperatureUnits
@@ -38,7 +38,7 @@ test('F to C', () => {
 });
 
 test('C to F', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperature',
     TemperatureSystems,
     TemperatureUnits
@@ -49,7 +49,7 @@ test('C to F', () => {
 });
 
 test('F to K', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperature',
     TemperatureSystems,
     TemperatureUnits
@@ -60,7 +60,7 @@ test('F to K', () => {
 });
 
 test('F to R', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperature',
     TemperatureSystems,
     TemperatureUnits
@@ -71,7 +71,7 @@ test('F to R', () => {
 });
 
 test('R to F', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperature',
     TemperatureSystems,
     TemperatureUnits
@@ -82,7 +82,7 @@ test('R to F', () => {
 });
 
 test('R to C', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperature',
     TemperatureSystems,
     TemperatureUnits
@@ -93,7 +93,7 @@ test('R to C', () => {
 });
 
 test('R to K', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperature',
     TemperatureSystems,
     TemperatureUnits

@@ -1,11 +1,11 @@
-import configureMeasurements from '../..';
+import { configMeasurements } from '../..';
 import reactivePower, {
   ReactivePowerSystems,
   ReactivePowerUnits,
 } from '../reactivePower';
 
 test('VAR to VAR', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactivePower',
     ReactivePowerSystems,
     ReactivePowerUnits
@@ -16,7 +16,7 @@ test('VAR to VAR', () => {
 });
 
 test('mVAR to mVAR', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactivePower',
     ReactivePowerSystems,
     ReactivePowerUnits
@@ -27,7 +27,7 @@ test('mVAR to mVAR', () => {
 });
 
 test('kVAR to kVAR', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactivePower',
     ReactivePowerSystems,
     ReactivePowerUnits
@@ -38,7 +38,7 @@ test('kVAR to kVAR', () => {
 });
 
 test('MVAR to MVAR', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactivePower',
     ReactivePowerSystems,
     ReactivePowerUnits
@@ -49,7 +49,7 @@ test('MVAR to MVAR', () => {
 });
 
 test('GVAR to GVAR', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactivePower',
     ReactivePowerSystems,
     ReactivePowerUnits
@@ -60,7 +60,7 @@ test('GVAR to GVAR', () => {
 });
 
 test('VAR to mVAR', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactivePower',
     ReactivePowerSystems,
     ReactivePowerUnits
@@ -71,7 +71,7 @@ test('VAR to mVAR', () => {
 });
 
 test('VAR to kVAR', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactivePower',
     ReactivePowerSystems,
     ReactivePowerUnits
@@ -82,7 +82,7 @@ test('VAR to kVAR', () => {
 });
 
 test('VAR to MVAR', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactivePower',
     ReactivePowerSystems,
     ReactivePowerUnits
@@ -93,7 +93,7 @@ test('VAR to MVAR', () => {
 });
 
 test('VAR to GVAR', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactivePower',
     ReactivePowerSystems,
     ReactivePowerUnits
@@ -104,7 +104,7 @@ test('VAR to GVAR', () => {
 });
 
 test('GVAR to mVAR', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactivePower',
     ReactivePowerSystems,
     ReactivePowerUnits
@@ -115,7 +115,7 @@ test('GVAR to mVAR', () => {
 });
 
 test('MVAR to mVAR', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactivePower',
     ReactivePowerSystems,
     ReactivePowerUnits
@@ -126,7 +126,7 @@ test('MVAR to mVAR', () => {
 });
 
 test('kVAR to mVAR', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactivePower',
     ReactivePowerSystems,
     ReactivePowerUnits
@@ -137,7 +137,7 @@ test('kVAR to mVAR', () => {
 });
 
 test('mVAR to kVAR', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactivePower',
     ReactivePowerSystems,
     ReactivePowerUnits
@@ -148,7 +148,7 @@ test('mVAR to kVAR', () => {
 });
 
 test('mVAR to VAR', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactivePower',
     ReactivePowerSystems,
     ReactivePowerUnits
@@ -159,7 +159,7 @@ test('mVAR to VAR', () => {
 });
 
 test('kVAR to VAR', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'reactivePower',
     ReactivePowerSystems,
     ReactivePowerUnits

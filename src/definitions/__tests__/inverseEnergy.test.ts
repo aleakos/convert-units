@@ -1,11 +1,11 @@
-import configureMeasurements from '../..';
+import { configMeasurements } from '../..';
 import inverseEnergy, {
   InverseEnergySystems,
   InverseEnergyUnits,
 } from '../inverseEnergy';
 
 test('/Ws to /Ws', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -16,7 +16,7 @@ test('/Ws to /Ws', () => {
 });
 
 test('/Ws to /Wm', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -27,7 +27,7 @@ test('/Ws to /Wm', () => {
 });
 
 test('/Ws to /Wh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -38,7 +38,7 @@ test('/Ws to /Wh', () => {
 });
 
 test('/Ws to /mWh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -49,7 +49,7 @@ test('/Ws to /mWh', () => {
 });
 
 test('/Ws to /kWh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -60,7 +60,7 @@ test('/Ws to /kWh', () => {
 });
 
 test('/Ws to /MWh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -71,7 +71,7 @@ test('/Ws to /MWh', () => {
 });
 
 test('/Ws to /GWh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -82,7 +82,7 @@ test('/Ws to /GWh', () => {
 });
 
 test('/Ws to /J', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -93,7 +93,7 @@ test('/Ws to /J', () => {
 });
 
 test('/Ws to /kJ', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -104,7 +104,7 @@ test('/Ws to /kJ', () => {
 });
 
 test('/Ws to /MJ', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -115,7 +115,7 @@ test('/Ws to /MJ', () => {
 });
 
 test('/Ws to /GJ', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -126,7 +126,7 @@ test('/Ws to /GJ', () => {
 });
 
 test('/Wm to /Wm', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -137,7 +137,7 @@ test('/Wm to /Wm', () => {
 });
 
 test('/Wm to /Ws', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -148,7 +148,7 @@ test('/Wm to /Ws', () => {
 });
 
 test('/Wm to /Wh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -159,7 +159,7 @@ test('/Wm to /Wh', () => {
 });
 
 test('/Wm to /mWh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -170,7 +170,7 @@ test('/Wm to /mWh', () => {
 });
 
 test('/Wm to /kWh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -181,7 +181,7 @@ test('/Wm to /kWh', () => {
 });
 
 test('/Wm to /MWh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -192,7 +192,7 @@ test('/Wm to /MWh', () => {
 });
 
 test('/Wm to /GWh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -203,7 +203,7 @@ test('/Wm to /GWh', () => {
 });
 
 test('/Wm to /J', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -214,7 +214,7 @@ test('/Wm to /J', () => {
 });
 
 test('/Wm to /kJ', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -225,7 +225,7 @@ test('/Wm to /kJ', () => {
 });
 
 test('/Wm to /MJ', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -236,7 +236,7 @@ test('/Wm to /MJ', () => {
 });
 
 test('/Wm to /GJ', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -247,7 +247,7 @@ test('/Wm to /GJ', () => {
 });
 
 test('/Wh to /Wh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -258,7 +258,7 @@ test('/Wh to /Wh', () => {
 });
 
 test('/mWh to /mWh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -269,7 +269,7 @@ test('/mWh to /mWh', () => {
 });
 
 test('/kWh to /kWh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -280,7 +280,7 @@ test('/kWh to /kWh', () => {
 });
 
 test('/MWh to /MWh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -291,7 +291,7 @@ test('/MWh to /MWh', () => {
 });
 
 test('/GWh to /GWh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -302,7 +302,7 @@ test('/GWh to /GWh', () => {
 });
 
 test('/J to /J', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -313,7 +313,7 @@ test('/J to /J', () => {
 });
 
 test('/kJ to /kJ', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -324,7 +324,7 @@ test('/kJ to /kJ', () => {
 });
 
 test('/MJ to /MJ', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -335,7 +335,7 @@ test('/MJ to /MJ', () => {
 });
 
 test('/GJ to /GJ', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -346,7 +346,7 @@ test('/GJ to /GJ', () => {
 });
 
 test('/Wh to /J', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -357,7 +357,7 @@ test('/Wh to /J', () => {
 });
 
 test('/Wh to /mWh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -368,7 +368,7 @@ test('/Wh to /mWh', () => {
 });
 
 test('/Wh to /kWh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -379,7 +379,7 @@ test('/Wh to /kWh', () => {
 });
 
 test('/Wh to /MWh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -390,7 +390,7 @@ test('/Wh to /MWh', () => {
 });
 
 test('/Wh to /GWh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -401,7 +401,7 @@ test('/Wh to /GWh', () => {
 });
 
 test('/GWh to /mWh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -412,7 +412,7 @@ test('/GWh to /mWh', () => {
 });
 
 test('/GWh to /J', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -423,7 +423,7 @@ test('/GWh to /J', () => {
 });
 
 test('/MWh to /mWh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -434,7 +434,7 @@ test('/MWh to /mWh', () => {
 });
 
 test('/kWh to /mWh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -445,7 +445,7 @@ test('/kWh to /mWh', () => {
 });
 
 test('/mWh to /kWh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -456,7 +456,7 @@ test('/mWh to /kWh', () => {
 });
 
 test('/mWh to /Wh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -467,7 +467,7 @@ test('/mWh to /Wh', () => {
 });
 
 test('/kWh to /Wh', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -478,7 +478,7 @@ test('/kWh to /Wh', () => {
 });
 
 test('/kWh to /kJ', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -489,7 +489,7 @@ test('/kWh to /kJ', () => {
 });
 
 test('/MJ to /J', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -500,7 +500,7 @@ test('/MJ to /J', () => {
 });
 
 test('/GJ to /J', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -511,7 +511,7 @@ test('/GJ to /J', () => {
 });
 
 test('/GJ to /MJ', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -522,7 +522,7 @@ test('/GJ to /MJ', () => {
 });
 
 test('/MJ to /kJ', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -533,7 +533,7 @@ test('/MJ to /kJ', () => {
 });
 
 test('/MWh to /MJ', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits
@@ -544,7 +544,7 @@ test('/MWh to /MJ', () => {
 });
 
 test('/MWh to /GJ', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'inverseEnergy',
     InverseEnergySystems,
     InverseEnergyUnits

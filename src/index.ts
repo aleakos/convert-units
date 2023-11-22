@@ -1,5 +1,5 @@
-import { configMeasurements, Converter } from './convert.js';
-export default configMeasurements;
+export { configMeasurements, Converter } from './convert.js';
+// export default configMeasurements;
 export type {
   Anchor,
   BestResult,
@@ -8,4 +8,4 @@ export type {
   Unit,
   UnitDescription,
 } from './convert.js';
-export { Converter };
+// export { Converter };

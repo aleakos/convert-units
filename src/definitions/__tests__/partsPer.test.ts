@@ -1,8 +1,8 @@
-import configureMeasurements from '../..';
+import { configMeasurements } from '../..';
 import partsPer, { PartsPerSystems, PartsPerUnits } from '../partsPer';
 
 test('ppm to ppm', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'partsPer',
     PartsPerSystems,
     PartsPerUnits
@@ -13,7 +13,7 @@ test('ppm to ppm', () => {
 });
 
 test('ppb to ppb', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'partsPer',
     PartsPerSystems,
     PartsPerUnits
@@ -24,7 +24,7 @@ test('ppb to ppb', () => {
 });
 
 test('ppm to ppb', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'partsPer',
     PartsPerSystems,
     PartsPerUnits
@@ -35,7 +35,7 @@ test('ppm to ppb', () => {
 });
 
 test('ppb to ppm', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'partsPer',
     PartsPerSystems,
     PartsPerUnits
@@ -46,7 +46,7 @@ test('ppb to ppm', () => {
 });
 
 test('ppt to ppt', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'partsPer',
     PartsPerSystems,
     PartsPerUnits
@@ -57,7 +57,7 @@ test('ppt to ppt', () => {
 });
 
 test('ppm to ppt', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'partsPer',
     PartsPerSystems,
     PartsPerUnits
@@ -68,7 +68,7 @@ test('ppm to ppt', () => {
 });
 
 test('ppt to ppb', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'partsPer',
     PartsPerSystems,
     PartsPerUnits
@@ -79,7 +79,7 @@ test('ppt to ppb', () => {
 });
 
 test('ppt to ppm', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'partsPer',
     PartsPerSystems,
     PartsPerUnits
@@ -90,7 +90,7 @@ test('ppt to ppm', () => {
 });
 
 test('ppq to ppq', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'partsPer',
     PartsPerSystems,
     PartsPerUnits
@@ -101,7 +101,7 @@ test('ppq to ppq', () => {
 });
 
 test('ppq to ppt', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'partsPer',
     PartsPerSystems,
     PartsPerUnits
@@ -112,7 +112,7 @@ test('ppq to ppt', () => {
 });
 
 test('ppq to ppm', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'partsPer',
     PartsPerSystems,
     PartsPerUnits

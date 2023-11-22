@@ -1,11 +1,11 @@
-import configureMeasurements from '../..';
+import { configMeasurements } from '../..';
 import heatCapacity, {
   HeatCapacitySystems,
   HeatCapacityUnits,
 } from '../heatCapacity';
 
 test('J/kg/K to J/kg/K', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'heatCapacity',
     HeatCapacitySystems,
     HeatCapacityUnits
@@ -16,7 +16,7 @@ test('J/kg/K to J/kg/K', () => {
 });
 
 test('J/kg/K to kJ/kg/K', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'heatCapacity',
     HeatCapacitySystems,
     HeatCapacityUnits
@@ -27,7 +27,7 @@ test('J/kg/K to kJ/kg/K', () => {
 });
 
 test('J/kg/K to BTU/lb/F', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'heatCapacity',
     HeatCapacitySystems,
     HeatCapacityUnits
@@ -40,7 +40,7 @@ test('J/kg/K to BTU/lb/F', () => {
 });
 
 test('kJ/kg/K to J/kg/K', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'heatCapacity',
     HeatCapacitySystems,
     HeatCapacityUnits
@@ -51,7 +51,7 @@ test('kJ/kg/K to J/kg/K', () => {
 });
 
 test('kJ/kg/K to BTU/lb/F', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'heatCapacity',
     HeatCapacitySystems,
     HeatCapacityUnits
@@ -64,7 +64,7 @@ test('kJ/kg/K to BTU/lb/F', () => {
 });
 
 test('BTU/lb/F to J/kg/K', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'heatCapacity',
     HeatCapacitySystems,
     HeatCapacityUnits
@@ -77,7 +77,7 @@ test('BTU/lb/F to J/kg/K', () => {
 });
 
 test('BTU/lb/F to kJ/kg/K', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'heatCapacity',
     HeatCapacitySystems,
     HeatCapacityUnits

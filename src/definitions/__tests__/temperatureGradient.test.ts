@@ -1,11 +1,11 @@
-import configureMeasurements from '../..';
+import { configMeasurements } from '../..';
 import temperatureGradient, {
   TemperatureGradientSystems,
   TemperatureGradientUnits,
 } from '../temperatureGradient';
 
 test('C/km to C/km', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperatureGradient',
     TemperatureGradientSystems,
     TemperatureGradientUnits
@@ -16,7 +16,7 @@ test('C/km to C/km', () => {
 });
 
 test('C/km to C/100m', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperatureGradient',
     TemperatureGradientSystems,
     TemperatureGradientUnits
@@ -27,7 +27,7 @@ test('C/km to C/100m', () => {
 });
 
 test('C/km to C/m', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperatureGradient',
     TemperatureGradientSystems,
     TemperatureGradientUnits
@@ -38,7 +38,7 @@ test('C/km to C/m', () => {
 });
 
 test('C/km to F/ft', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperatureGradient',
     TemperatureGradientSystems,
     TemperatureGradientUnits
@@ -49,7 +49,7 @@ test('C/km to F/ft', () => {
 });
 
 test('C/100m to C/km', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperatureGradient',
     TemperatureGradientSystems,
     TemperatureGradientUnits
@@ -60,7 +60,7 @@ test('C/100m to C/km', () => {
 });
 
 test('C/100m to C/m', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperatureGradient',
     TemperatureGradientSystems,
     TemperatureGradientUnits
@@ -71,7 +71,7 @@ test('C/100m to C/m', () => {
 });
 
 test('C/100m to F/ft', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperatureGradient',
     TemperatureGradientSystems,
     TemperatureGradientUnits
@@ -82,7 +82,7 @@ test('C/100m to F/ft', () => {
 });
 
 test('C/m to C/km', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperatureGradient',
     TemperatureGradientSystems,
     TemperatureGradientUnits
@@ -93,7 +93,7 @@ test('C/m to C/km', () => {
 });
 
 test('C/m to C/100m', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperatureGradient',
     TemperatureGradientSystems,
     TemperatureGradientUnits
@@ -104,7 +104,7 @@ test('C/m to C/100m', () => {
 });
 
 test('C/m to F/ft', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperatureGradient',
     TemperatureGradientSystems,
     TemperatureGradientUnits
@@ -115,7 +115,7 @@ test('C/m to F/ft', () => {
 });
 
 test('F/ft to C/km', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperatureGradient',
     TemperatureGradientSystems,
     TemperatureGradientUnits
@@ -126,7 +126,7 @@ test('F/ft to C/km', () => {
 });
 
 test('F/ft to C/100m', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperatureGradient',
     TemperatureGradientSystems,
     TemperatureGradientUnits
@@ -137,7 +137,7 @@ test('F/ft to C/100m', () => {
 });
 
 test('F/ft to C/m', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperatureGradient',
     TemperatureGradientSystems,
     TemperatureGradientUnits
@@ -148,7 +148,7 @@ test('F/ft to C/m', () => {
 });
 
 test('F/100ft to C/km', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperatureGradient',
     TemperatureGradientSystems,
     TemperatureGradientUnits
@@ -161,7 +161,7 @@ test('F/100ft to C/km', () => {
 });
 
 test('F/100ft to C/100m', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperatureGradient',
     TemperatureGradientSystems,
     TemperatureGradientUnits
@@ -174,7 +174,7 @@ test('F/100ft to C/100m', () => {
 });
 
 test('F/100ft to C/m', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'temperatureGradient',
     TemperatureGradientSystems,
     TemperatureGradientUnits

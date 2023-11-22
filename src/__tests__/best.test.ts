@@ -1,9 +1,9 @@
-import configureMeasurements from '..';
+import { configMeasurements } from '..';
 import length, { LengthSystems, LengthUnits } from '../definitions/length';
 import power, { PowerSystems, PowerUnits } from '../definitions/power';
 
 test('best mm', () => {
-  const convert = configureMeasurements<'length', LengthSystems, LengthUnits>({
+  const convert = configMeasurements<'length', LengthSystems, LengthUnits>({
     length,
   });
   const actual = convert(1200).from('mm').toBest(),
@@ -17,7 +17,7 @@ test('best mm', () => {
 });
 
 test('best mm even if an empty object is given', () => {
-  const convert = configureMeasurements<'length', LengthSystems, LengthUnits>({
+  const convert = configMeasurements<'length', LengthSystems, LengthUnits>({
     length,
   });
   const actual = convert(1200).from('mm').toBest({}),
@@ -31,7 +31,7 @@ test('best mm even if an empty object is given', () => {
 });
 
 test('Should ignore exclude values that are not in the list of possibilities', () => {
-  const convert = configureMeasurements<'length', LengthSystems, LengthUnits>({
+  const convert = configMeasurements<'length', LengthSystems, LengthUnits>({
     length,
   });
   const actual = convert(1200)
@@ -51,7 +51,7 @@ test('Should ignore exclude values that are not in the list of possibilities', (
 });
 
 test('Should ignore exclude if it is null or undefined', () => {
-  const convert = configureMeasurements<'length', LengthSystems, LengthUnits>({
+  const convert = configMeasurements<'length', LengthSystems, LengthUnits>({
     length,
   });
   const actual = convert(1200).from('mm').toBest({ exclude: undefined }),
@@ -65,7 +65,7 @@ test('Should ignore exclude if it is null or undefined', () => {
 });
 
 test('excludes measurements', () => {
-  const convert = configureMeasurements<'length', LengthSystems, LengthUnits>({
+  const convert = configMeasurements<'length', LengthSystems, LengthUnits>({
     length,
   });
   const actual = convert(1200000)
@@ -81,7 +81,7 @@ test('excludes measurements', () => {
 });
 
 test('should convert to the chosen system', () => {
-  const convert = configureMeasurements<'length', LengthSystems, LengthUnits>({
+  const convert = configMeasurements<'length', LengthSystems, LengthUnits>({
     length,
   });
   const actual = convert(1200000).from('mm').toBest({ system: 'imperial' }),
@@ -95,7 +95,7 @@ test('should convert to the chosen system', () => {
 });
 
 test('should exlude values and convert to the chosen system', () => {
-  const convert = configureMeasurements<'length', LengthSystems, LengthUnits>({
+  const convert = configMeasurements<'length', LengthSystems, LengthUnits>({
     length,
   });
   const actual = convert(1200000)
@@ -111,7 +111,7 @@ test('should exlude values and convert to the chosen system', () => {
 });
 
 test('does not break when excluding from measurement', () => {
-  const convert = configureMeasurements<'length', LengthSystems, LengthUnits>({
+  const convert = configMeasurements<'length', LengthSystems, LengthUnits>({
     length,
   });
   const actual = convert(10)
@@ -127,7 +127,7 @@ test('does not break when excluding from measurement', () => {
 });
 
 test('if all measurements are excluded return from', () => {
-  const convert = configureMeasurements<'length', LengthSystems, LengthUnits>({
+  const convert = configMeasurements<'length', LengthSystems, LengthUnits>({
     length,
   });
   const actual = convert(10)
@@ -137,7 +137,7 @@ test('if all measurements are excluded return from', () => {
 });
 
 test('pre-cut off number', () => {
-  const convert = configureMeasurements<'length', LengthSystems, LengthUnits>({
+  const convert = configMeasurements<'length', LengthSystems, LengthUnits>({
     length,
   });
   const actual = convert(9000).from('mm').toBest({ cutOffNumber: 10 }),
@@ -151,7 +151,7 @@ test('pre-cut off number', () => {
 });
 
 test('Should ignore the cut off number if it is undefined (use default)', () => {
-  const convert = configureMeasurements<'length', LengthSystems, LengthUnits>({
+  const convert = configMeasurements<'length', LengthSystems, LengthUnits>({
     length,
   });
   const actual = convert(9000).from('mm').toBest({ cutOffNumber: undefined }),
@@ -165,7 +165,7 @@ test('Should ignore the cut off number if it is undefined (use default)', () => 
 });
 
 test('post-cut off number', () => {
-  const convert = configureMeasurements<'length', LengthSystems, LengthUnits>({
+  const convert = configMeasurements<'length', LengthSystems, LengthUnits>({
     length,
   });
   const actual = convert(10000).from('mm').toBest({ cutOffNumber: 10 }),
@@ -179,7 +179,7 @@ test('post-cut off number', () => {
 });
 
 test('return null if all possible units are excluded', () => {
-  const convert = configureMeasurements<'length', LengthSystems, LengthUnits>({
+  const convert = configMeasurements<'length', LengthSystems, LengthUnits>({
     length,
   });
   const convertLenght = convert(10);
@@ -193,7 +193,7 @@ test('return null if all possible units are excluded', () => {
 test('Make sure that the first unit tested cannot become the best value if it is less than the cutOffNumber', () => {
   type TestMeasureSystems = 'test';
   type TestMeasureUnits = 'a' | 'al' | 'axl';
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'testmeasure',
     TestMeasureSystems,
     TestMeasureUnits
@@ -237,7 +237,7 @@ test('Make sure that the first unit tested cannot become the best value if it is
 });
 
 test('Negative numbers should work exactly the same way as positive numbers', () => {
-  const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
+  const convert = configMeasurements<'power', PowerSystems, PowerUnits>({
     power,
   });
   const convertPower = convert(-6596848);
@@ -252,7 +252,7 @@ test('Negative numbers should work exactly the same way as positive numbers', ()
 });
 
 test('best mm with negative numbers', () => {
-  const convert = configureMeasurements<'length', LengthSystems, LengthUnits>({
+  const convert = configMeasurements<'length', LengthSystems, LengthUnits>({
     length,
   });
   const actual = convert(-1200).from('mm').toBest(),

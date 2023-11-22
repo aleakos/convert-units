@@ -1,12 +1,10 @@
-convert-units
-=============
+# convert-units
 
 [![Downloads](https://img.shields.io/npm/dm/convert-units.svg)](https://www.npmjs.com/package/convert-units)
 
 A handy utility for converting between quantities in different units.
 
-Installation
------
+## Installation
 
 ```bash
 npm install convert-units --save
@@ -17,8 +15,7 @@ npm install convert-units --save
 npm install convert-units@beta --save
 ```
 
-Usage
------
+## Usage
 
 `convert-units` has a simple chained API that is easy to read. It can also be configured with the measures that are packaged with it or custom measures.
 
@@ -26,27 +23,27 @@ The code snippet below shows everything needed to get going:
 
 ```js
 // `allMeasures` includes all the measures packaged with this library
-import configureMeasurements from 'convert-units';
+import { configMeasurements } from 'convert-units';
 import allMeasures from 'convert-units/definitions/all';
 
-const convert = configureMeasurements(allMeasures);
+const convert = configMeasurements(allMeasures);
 ```
 
 It's also possible to limit the measures configured. This allows for smaller packages when using a bundler like `webpack` or `rollup`:
 
 ```js
-import configureMeasurements from 'convert-units';
+import { configMeasurements } from 'convert-units';
 import volume from 'convert-units/definitions/volume';
 
 /*
-  `configureMeasurements` is a closure that accepts a directory
+  `configMeasurements` is a closure that accepts a directory
   of measures and returns a factory function (`convert`) that uses
   only those measures.
 */
-const convert = configureMeasurements({
-    volume,
-    mass,
-    length,
+const convert = configMeasurements({
+  volume,
+  mass,
+  length,
 });
 ```
 
@@ -81,7 +78,9 @@ convert(12000).from('mm').toBest();
 Exclude units to get different results:
 
 ```js
-convert(12000).from('mm').toBest({ exclude: ['m'] });
+convert(12000)
+  .from('mm')
+  .toBest({ exclude: ['m'] });
 // { val: 1200, unit: 'cm', ... } (the smallest unit excluding meters)
 ```
 
@@ -105,11 +104,11 @@ List all available measures:
 convert().measures();
 // [ 'length', 'mass', 'volume', ... ]
 
-const differentConvert = configureMeasurements({
-    volume,
-    mass,
-    length,
-    area,
+const differentConvert = configMeasurements({
+  volume,
+  mass,
+  length,
+  area,
 });
 differentConvert().measures();
 // [ 'length', 'mass', 'volume', 'area' ]
@@ -184,8 +183,7 @@ convert().list('mass');
 */
 ```
 
-Custom Measures
----------------
+## Custom Measures
 
 To create a custom measure, it's best to start with an plain object. The key itself will be used as the measure's name. In the example below, the measure's name is "`customMeasure`".
 
@@ -197,6 +195,7 @@ const measure = {
   customMeasure: {},
 };
 ```
+
 </details>
 
 Next step is to create the measure's systems. A system is a collection of related units. Here are some examples of some common systems: metric, imperial, SI, bits, bytes, etc. You don't need to use one of these systems for your measure. In the example below, there are 3 systems defined: `A`, `B`, `C`.
@@ -211,10 +210,11 @@ const measure = {
       A: {},
       B: {},
       C: {},
-    }
+    },
   },
 };
 ```
+
 </details>
 
 Now the measure is ready to define some units. The first unit that needs to be defined for each system is the base unit. The base unit is like all other units except that it's the unit used to convert between systems and every other unit in the system will be configured to convert directly to it. Below is an example of a base unit for the `A` system.
@@ -227,18 +227,21 @@ const measure = {
   customMeasure: {
     systems: {
       A: {
-        a: {  // the name of the unit (commonly an abbreviation)
-          name: {  // human friendly names for the unit
+        a: {
+          // the name of the unit (commonly an abbreviation)
+          name: {
+            // human friendly names for the unit
             singular: 'a',
             plural: 'as',
           },
-        }
+        },
       },
       // ignoring C & B for now
-    }
+    },
   },
 };
 ```
+
 </details>
 
 Each unit also needs to an `to_anchor` property. `to_anchor` holds a number which represents the factor needed to go from another unit in the system to the base unit. In the case of the `a` unit, the value will be `1`. The value for all base units in every system should to be `1` because if you convert `5 a` to `a` the result should be `5 a`. This is because the value of `to_anchor` is multiplied with the value of the unit being converted from. So in this case, `5 * 1 = 5`.
@@ -257,13 +260,14 @@ const measure = {
             plural: 'as',
           },
           to_anchor: 1,
-        }
+        },
       },
       // ignoring C & B for now
-    }
+    },
   },
 };
 ```
+
 </details>
 
 Adding a second measure to the `A` measure looks exactly the same as the `a` unit except the `to_anchor` value will be different. If the unit is supposed to be larger than the base then the `to_anchor` value needs to be greater than `1`. For example, the new unit `ah` should be a factor of 10 larger than the base. This would mean that `1 ah` equals `10 a`. To make sure this assumption is correct multiply the `to_anchor` by the unit, `5 ah * 10 = 50 a`.
@@ -276,12 +280,13 @@ const measure = {
   customMeasure: {
     systems: {
       A: {
-        ah: {  // new unit, ah
+        ah: {
+          // new unit, ah
           name: {
             singular: 'ah',
             plural: 'ahs',
           },
-          to_anchor: 1e1,  // = 10 ^ 1 = 10
+          to_anchor: 1e1, // = 10 ^ 1 = 10
         },
         a: {
           name: {
@@ -289,13 +294,14 @@ const measure = {
             plural: 'as',
           },
           to_anchor: 1,
-        }
+        },
       },
       // ignoring C & B for now
     },
   },
 };
 ```
+
 </details>
 
 If the unit should be smaller than the base unit then the `to_anchor` value should be less than `1` and greater than `0`. With that said, the new unit `al` should have a `to_anchor` value of `0.1`. This would mean that `10 al` would equal `1 a`.
@@ -335,6 +341,7 @@ const measure = {
   },
 };
 ```
+
 </details>
 
 There is one more option, `anchor_shift`, it can be defined on a unit if it requires to be shifted after the conversion. If `al` had a `anchor_shift` of `5` then `10 al` to `a` would look like, `10 * 0.1 - 5 = -4 a`. If the shift needs to go in the opposite direction then it should be a negative number. Typically, measures and units that use the `anchor_shift` only need to be shifted. If that is the desired effect then setting `to_anchor` to `1` for each unit will achieve that. To see a real world example, check out the `temperature` measure in the `definitions` folder.
@@ -375,6 +382,7 @@ const measure = {
   },
 };
 ```
+
 </details>
 
 At this point if the custom measure only needs one system then it's done! However, if it requires more than one system, an extra step is required. In the example code below, the previously ignored systems `C` and `B` have been defined to look exactly like the `A` system.
@@ -456,9 +464,10 @@ const measure = {
         },
       },
     },
-  }
+  },
 };
 ```
+
 </details>
 
 The measure now has three systems, `A`, `B`, and `C`. To define how each system can be converted to the other, anchors will needs to be defined for each possible conversion. To start, add the key `anchors` to the `customMeasure` object:
@@ -473,9 +482,10 @@ const measure = {
       // ...
     },
     anchors: {},
-  }
+  },
 };
 ```
+
 </details>
 
 Then just like for the `systems` object, add a key for each system with it's value being an empty object:
@@ -494,9 +504,10 @@ const measure = {
       B: {},
       C: {},
     },
-  }
+  },
 };
 ```
+
 </details>
 
 In each of those empty objects, add keys for the other systems which their values being an empty object. The measure should look like the code snippet below:
@@ -511,22 +522,26 @@ const measure = {
       // ...
     },
     anchors: {
-      A: {  // A to B or C
+      A: {
+        // A to B or C
         B: {},
         C: {},
       },
-      B: {  // B to A or C
+      B: {
+        // B to A or C
         A: {},
         C: {},
       },
-      C: {  // C to A or B
+      C: {
+        // C to A or B
         A: {},
         B: {},
       },
     },
-  }
+  },
 };
 ```
+
 </details>
 
 When converting, for example, `1 a` to `bl`, the code can perform a simple lookup here, `anchors.A.B`. If instead the conversion is from `10 c` to `ah` then the lookup would be, `anchors.C.A`. At this point how to convert from one system to the next hasn't been defined yet; that will be the next and final step in creating a new measure.
@@ -545,7 +560,8 @@ const measure = {
       // ...
     },
     anchors: {
-      A: {  // A to B or C
+      A: {
+        // A to B or C
         B: {
           ratio: 2,
         },
@@ -553,7 +569,8 @@ const measure = {
           ratio: 3,
         },
       },
-      B: {  // B to A or C
+      B: {
+        // B to A or C
         A: {
           ratio: 1 / 2,
         },
@@ -561,20 +578,22 @@ const measure = {
           ratio: 3 / 2,
         },
       },
-      C: {  // C to A or B
+      C: {
+        // C to A or B
         A: {
           // example of using a transform function
           // This would be the same as ratio: 1 / 3
-          transform: value => value * 1 / 3,
+          transform: (value) => (value * 1) / 3,
         },
         B: {
-          transform: value => value * 2 / 3,
+          transform: (value) => (value * 2) / 3,
         },
       },
     },
-  }
+  },
 };
 ```
+
 </details>
 
 With the above example, converting `10 cl` to `ah` would result in `0.0333` (rounded).
@@ -691,13 +710,14 @@ const measure = {
         },
       },
     },
-  }
+  },
 };
 
-const convert = configureMeasurements(measure);
-convert(1).from('a').to('bl')
+const convert = configMeasurements(measure);
+convert(1).from('a').to('bl');
 // 20
 ```
+
 </details>
 
 <details>
@@ -705,17 +725,18 @@ convert(1).from('a').to('bl')
 
 ```js
 // a -> bl
-let v = 1  // 1 a
-let a_to_anchor = 1  // systems.A.a.to_anchor
-let r = v * a_to_anchor
+let v = 1; // 1 a
+let a_to_anchor = 1; // systems.A.a.to_anchor
+let r = v * a_to_anchor;
 // r = 1 a
-let ratio = 2  // anchors.A.B.ratio
-r *= ratio
+let ratio = 2; // anchors.A.B.ratio
+r *= ratio;
 // r = 2 b
-let bl_to_anchor = 1e-1  // systems.B.bl.to_anchor
-r /= b_to_anchor
+let bl_to_anchor = 1e-1; // systems.B.bl.to_anchor
+r /= b_to_anchor;
 // r = 20 bl
 ```
+
 </details>
 
 ## Extending Existing Measures
@@ -726,7 +747,7 @@ Since measure definitions are plain JS objects, additional units can be added, r
 <summary>Example of extending the `length` measure</summary>
 
 ```ts
-import configureMeasurements, {
+import {configMeasurements}, {
   Measure
 } from 'convert-units';
 
@@ -759,21 +780,22 @@ const extendedLength: Measure<LengthSystems, NewLengthUnits> = {
   },
 };
 
-const convert = configureMeasurements<'length', LengthSystems, NewLengthUnits>(
+const convert = configMeasurements<'length', LengthSystems, NewLengthUnits>(
   { length: extendedLength }
 );
 
 convert(4).from('cm').to('px');
 // 151.18110236220474
 ```
+
 </details>
 
-Migrating from v2 to v3+
------------------------
+## Migrating from v2 to v3+
 
 This only applies if moving from `<=2.3.4` to `>=3.x`.
- 
+
 `index.js`
+
 ```js
 import convert from 'convert-units';
 
@@ -784,38 +806,36 @@ convert(1).from('m').to('ft');
 The code above could be changed to match the following:
 
 `index.js`
+
 ```js
-import convert from './convert';  // defined below
+import convert from './convert'; // defined below
 
 convert(1).from('m').to('mm');
 convert(1).from('m').to('ft');
 ```
 
 `convert.js`
-```js
-import configureMeasurements from 'convert-units';
-import allMeasures from 'convert-units/definitions/all';  
 
-export default configureMeasurements(allMeasures);
+```js
+import { configMeasurements } from 'convert-units';
+import allMeasures from 'convert-units/definitions/all';
+
+export default configMeasurements(allMeasures);
 ```
 
-Typescript
-----------
+## Typescript
 
 The library provides types for all packaged mesasures:
 
 ```ts
-import configureMeasurements from 'convert-units';
+import { configMeasurements } from 'convert-units';
 
 import length, {
   LengthSystems,
   LengthUnits,
-} from "convert-units/definitions/length"
+} from 'convert-units/definitions/length';
 
-import area, {
-  AreaSystems,
-  AreaUnits,
-} from "convert-units/definitions/area"
+import area, { AreaSystems, AreaUnits } from 'convert-units/definitions/area';
 
 // Measures: The names of the measures being used
 type Measures = 'length' | 'area';
@@ -824,7 +844,7 @@ type Systems = LengthSystems | AreaSystems;
 // Units: All the units across all measures and their systems
 type Units = LengthUnits | AreaUnits;
 
-const convert = configureMeasurements<Measures, Systems, Units>({
+const convert = configMeasurements<Measures, Systems, Units>({
   length,
   area,
 });
@@ -836,17 +856,14 @@ convert(4).from('m').to('cm');
 This also allows for IDE tools to highlight issues before running the application:
 
 ```ts
-import configureMeasurements from 'convert-units';
+import { configMeasurements } from 'convert-units';
 
 import length, {
   LengthSystems,
   LengthUnits,
-} from "convert-units/definitions/length"
+} from 'convert-units/definitions/length';
 
-import area, {
-  AreaSystems,
-  AreaUnits,
-} from "convert-units/definitions/area"
+import area, { AreaSystems, AreaUnits } from 'convert-units/definitions/area';
 
 // Measures: The names of the measures being used
 type Measures = 'length' | 'area';
@@ -855,7 +872,7 @@ type Systems = LengthSystems | AreaSystems;
 // Units: All the units across all measures and their systems
 type Units = LengthUnits | AreaUnits;
 
-const convert = configureMeasurements<Measures, Systems, Units>({
+const convert = configMeasurements<Measures, Systems, Units>({
   length,
   area,
 });
@@ -867,7 +884,7 @@ convert(4).from('wat').to('cm');
 Types for the `allMeasures` object are also provided:
 
 ```js
-import configureMeasurements from 'convert-units';
+import {configMeasurements} from 'convert-units';
 
 import allMeasures, {
   AllMeasures,
@@ -875,7 +892,7 @@ import allMeasures, {
   AllMeasuresUnits,
 } from 'convert-units/definitions/all';
 
-const convertAll = configureMeasurements<
+const convertAll = configMeasurements<
   AllMeasures,
   AllMeasuresSystems,
   AllMeasuresUnits
@@ -885,13 +902,12 @@ convertAll(4).from('m2').to('cm2');
 // 400000
 ```
 
-Request Measures & Units
------------------------
+## Request Measures & Units
 
 All new measures and additional units are welcome! Take a look at [`src/definitions`](https://github.com/convert-units/convert-units/tree/main/src/definitions) to see some examples.
 
-Packaged Units
---------------
+## Packaged Units
+
 <details>
 <summary>Length</summary>
 * nm
@@ -1050,8 +1066,6 @@ Packaged Units
 * Nm
 * lbf-ft
 </details>
-
-
 
 <details>
 <summary>Pace</summary>
@@ -1212,7 +1226,7 @@ Packaged Units
 * doz-doz
 * doz
 * gr-gr
-* gros 
+* gros
 * half-dozen
 * long-hundred
 * ream
@@ -1221,9 +1235,8 @@ Packaged Units
 * trio
 </details>
 
+## License
 
-License
--------
 Copyright (c) 2013-2017 Ben Ng and Contributors, http://benng.me
 
 Permission is hereby granted, free of charge, to any person

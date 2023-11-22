@@ -1,8 +1,8 @@
-import configureMeasurements from '../..';
+import { configMeasurements } from '../..';
 import pressure, { PressureSystems, PressureUnits } from '../pressure';
 
 test('Pa to Pa', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'pressure',
     PressureSystems,
     PressureUnits
@@ -13,56 +13,56 @@ test('Pa to Pa', () => {
 });
 
 test('Pa to kPa', () => {
-  const convert = configureMeasurements({
+  const convert = configMeasurements({
     pressure,
   });
   expect(convert(2000).from('Pa').to('kPa')).toBe(2);
 });
 
 test('kPa to Pa', () => {
-  const convert = configureMeasurements({
+  const convert = configMeasurements({
     pressure,
   });
   expect(convert(1).from('kPa').to('Pa')).toBe(1000);
 });
 
 test('kPa to hPa', () => {
-  const convert = configureMeasurements({
+  const convert = configMeasurements({
     pressure,
   });
   expect(convert(20).from('kPa').to('hPa')).toBe(200);
 });
 
 test('kPa to MPa', () => {
-  const convert = configureMeasurements({
+  const convert = configMeasurements({
     pressure,
   });
   expect(convert(8000).from('kPa').to('MPa')).toBe(8);
 });
 
 test('kPa to bar', () => {
-  const convert = configureMeasurements({
+  const convert = configMeasurements({
     pressure,
   });
   expect(convert(6000).from('kPa').to('bar')).toBe(60);
 });
 
 test('kPa to torr', () => {
-  const convert = configureMeasurements({
+  const convert = configMeasurements({
     pressure,
   });
   expect(convert(532).from('kPa').to('torr')).toBeCloseTo(3990.33);
 });
 
 test('psi to psi', () => {
-  const convert = configureMeasurements({
+  const convert = configMeasurements({
     pressure,
   });
   expect(convert(10).from('psi').to('psi')).toBe(10);
 });
 
 test('psi to ksi', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'pressure',
     PressureSystems,
     PressureUnits
@@ -73,7 +73,7 @@ test('psi to ksi', () => {
 });
 
 test('Pa to psi', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'pressure',
     PressureSystems,
     PressureUnits
@@ -84,7 +84,7 @@ test('Pa to psi', () => {
 });
 
 test('torr to ksi', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'pressure',
     PressureSystems,
     PressureUnits
@@ -95,7 +95,7 @@ test('torr to ksi', () => {
 });
 
 test('psi to hPa', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'pressure',
     PressureSystems,
     PressureUnits
@@ -106,7 +106,7 @@ test('psi to hPa', () => {
 });
 
 test('psi to inHg', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'pressure',
     PressureSystems,
     PressureUnits
@@ -117,7 +117,7 @@ test('psi to inHg', () => {
 });
 
 test('inHg to psi', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'pressure',
     PressureSystems,
     PressureUnits
@@ -128,7 +128,7 @@ test('inHg to psi', () => {
 });
 
 test('inHg to Pa', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'pressure',
     PressureSystems,
     PressureUnits
@@ -139,7 +139,7 @@ test('inHg to Pa', () => {
 });
 
 test('Pa to inHg', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'pressure',
     PressureSystems,
     PressureUnits
@@ -150,7 +150,7 @@ test('Pa to inHg', () => {
 });
 
 test('mH2O to kPa', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'pressure',
     PressureSystems,
     PressureUnits
@@ -161,7 +161,7 @@ test('mH2O to kPa', () => {
 });
 
 test('kPa to mH2O', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'pressure',
     PressureSystems,
     PressureUnits
@@ -172,7 +172,7 @@ test('kPa to mH2O', () => {
 });
 
 test('mmHg to kPa', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'pressure',
     PressureSystems,
     PressureUnits
@@ -183,7 +183,7 @@ test('mmHg to kPa', () => {
 });
 
 test('kPa to mmHg', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'pressure',
     PressureSystems,
     PressureUnits

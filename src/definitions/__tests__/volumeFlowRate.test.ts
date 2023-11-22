@@ -1,11 +1,11 @@
-import configureMeasurements from '../..';
+import { configMeasurements } from '../..';
 import volumeFlowRate, {
   VolumeFlowRateSystems,
   VolumeFlowRateUnits,
 } from '../volumeFlowRate';
 
 test('l/s to l/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -16,7 +16,7 @@ test('l/s to l/s', () => {
 });
 
 test('mm3/s to l/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -27,7 +27,7 @@ test('mm3/s to l/s', () => {
 });
 
 test('cm3/s to l/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -38,7 +38,7 @@ test('cm3/s to l/s', () => {
 });
 
 test('dl/s to l/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -49,7 +49,7 @@ test('dl/s to l/s', () => {
 });
 
 test('cl/s to l/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -60,7 +60,7 @@ test('cl/s to l/s', () => {
 });
 
 test('ml/s to l/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -71,7 +71,7 @@ test('ml/s to l/s', () => {
 });
 
 test('m3/s to l/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -82,7 +82,7 @@ test('m3/s to l/s', () => {
 });
 
 test('km3/s to l/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -93,7 +93,7 @@ test('km3/s to l/s', () => {
 });
 
 test('l/s to ml/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -104,7 +104,7 @@ test('l/s to ml/s', () => {
 });
 
 test('dl/s to ml/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -115,7 +115,7 @@ test('dl/s to ml/s', () => {
 });
 
 test('cl/s to ml/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -126,7 +126,7 @@ test('cl/s to ml/s', () => {
 });
 
 test('ml/s to ml/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -137,7 +137,7 @@ test('ml/s to ml/s', () => {
 });
 
 test('fl-oz/s to fl-oz/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -148,7 +148,7 @@ test('fl-oz/s to fl-oz/s', () => {
 });
 
 test('fl-oz/s to Tbs/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -159,7 +159,7 @@ test('fl-oz/s to Tbs/s', () => {
 });
 
 test('Tbs/s to fl-oz/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -170,7 +170,7 @@ test('Tbs/s to fl-oz/s', () => {
 });
 
 test('Tbs/s to Tbs/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -181,7 +181,7 @@ test('Tbs/s to Tbs/s', () => {
 });
 
 test('l/s to l/min', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -192,7 +192,7 @@ test('l/s to l/min', () => {
 });
 
 test('l/s to l/h', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -203,7 +203,7 @@ test('l/s to l/h', () => {
 });
 
 test('kl/s to kl/h', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -214,7 +214,7 @@ test('kl/s to kl/h', () => {
 });
 
 test('l/s to kl/h', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -225,7 +225,7 @@ test('l/s to kl/h', () => {
 });
 
 test('l/s to m3/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -236,7 +236,7 @@ test('l/s to m3/s', () => {
 });
 
 test('m3/s to m3/h', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -247,7 +247,7 @@ test('m3/s to m3/h', () => {
 });
 
 test('tsp/s to l/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -258,7 +258,7 @@ test('tsp/s to l/s', () => {
 });
 
 test('in3/s to l/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -269,7 +269,7 @@ test('in3/s to l/s', () => {
 });
 
 test('in3/s to fl-oz/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -280,7 +280,7 @@ test('in3/s to fl-oz/s', () => {
 });
 
 test('m3/s to yd3/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -291,7 +291,7 @@ test('m3/s to yd3/s', () => {
 });
 
 test('ft3/s to cm3/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -302,7 +302,7 @@ test('ft3/s to cm3/s', () => {
 });
 
 test('pnt/s to ml/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -313,7 +313,7 @@ test('pnt/s to ml/s', () => {
 });
 
 test('ml/s to gal/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -324,7 +324,7 @@ test('ml/s to gal/s', () => {
 });
 
 test('gal/s to l/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -335,7 +335,7 @@ test('gal/s to l/s', () => {
 });
 
 test('kl/s to kl/min', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -346,7 +346,7 @@ test('kl/s to kl/min', () => {
 });
 
 test('l/s to kl/h', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -357,7 +357,7 @@ test('l/s to kl/h', () => {
 });
 
 test('kl/min to l/h', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -368,7 +368,7 @@ test('kl/min to l/h', () => {
 });
 
 test('l/s to m3/h', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -379,7 +379,7 @@ test('l/s to m3/h', () => {
 });
 
 test('m3/s to kl/h', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -390,7 +390,7 @@ test('m3/s to kl/h', () => {
 });
 
 test('fl-oz/s to m3/min', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -401,7 +401,7 @@ test('fl-oz/s to m3/min', () => {
 });
 
 test('ft3/min to l/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -412,7 +412,7 @@ test('ft3/min to l/s', () => {
 });
 
 test('pnt/min to kl/h', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits
@@ -423,7 +423,7 @@ test('pnt/min to kl/h', () => {
 });
 
 test('yd3/h to m3/min', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'volumeFlowRate',
     VolumeFlowRateSystems,
     VolumeFlowRateUnits

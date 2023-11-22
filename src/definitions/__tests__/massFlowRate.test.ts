@@ -1,4 +1,4 @@
-import configureMeasurements from '../..';
+import { configMeasurements } from '../..';
 
 import massFlowRate, {
   MassFlowRateSystems,
@@ -6,7 +6,7 @@ import massFlowRate, {
 } from '../massFlowRate';
 
 test('kg/s to kg/h', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -17,7 +17,7 @@ test('kg/s to kg/h', () => {
 });
 
 test('lb/s to lb/h', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -28,7 +28,7 @@ test('lb/s to lb/h', () => {
 });
 
 test('kg/s to lb/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -39,7 +39,7 @@ test('kg/s to lb/s', () => {
 });
 
 test('lb/s to kg/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -50,7 +50,7 @@ test('lb/s to kg/s', () => {
 });
 
 test('kg/h to lb/h', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -61,7 +61,7 @@ test('kg/h to lb/h', () => {
 });
 
 test('lb/h to kg/h', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -72,7 +72,7 @@ test('lb/h to kg/h', () => {
 });
 
 test('kg/h to t/h', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -83,7 +83,7 @@ test('kg/h to t/h', () => {
 });
 
 test('mt/h to kg/h', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -94,7 +94,7 @@ test('mt/h to kg/h', () => {
 });
 
 test('lb/h to t/h', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -105,7 +105,7 @@ test('lb/h to t/h', () => {
 });
 
 test('mt/h to lb/h', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -116,7 +116,7 @@ test('mt/h to lb/h', () => {
 });
 
 test('kg/min to kg/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -127,7 +127,7 @@ test('kg/min to kg/s', () => {
 });
 
 test('kg/min to lb/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -138,7 +138,7 @@ test('kg/min to lb/s', () => {
 });
 
 test('m3(cwe)/h to kg/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -149,7 +149,7 @@ test('m3(cwe)/h to kg/s', () => {
 });
 
 test('m3(cwe)/h to lb/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -162,7 +162,7 @@ test('m3(cwe)/h to lb/s', () => {
 });
 
 test('l(cwe)/s to kg/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -173,7 +173,7 @@ test('l(cwe)/s to kg/s', () => {
 });
 
 test('l(cwe)/s to lb/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -184,7 +184,7 @@ test('l(cwe)/s to lb/s', () => {
 });
 
 test('l(cwe)/min to kg/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -195,7 +195,7 @@ test('l(cwe)/min to kg/s', () => {
 });
 
 test('l(cwe)/min to lb/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -208,7 +208,7 @@ test('l(cwe)/min to lb/s', () => {
 });
 
 test('gal(cwe)/s to kg/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -219,7 +219,7 @@ test('gal(cwe)/s to kg/s', () => {
 });
 
 test('gal(cwe)/s to lb/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -232,7 +232,7 @@ test('gal(cwe)/s to lb/s', () => {
 });
 
 test('gal(cwe)/min to kg/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -245,7 +245,7 @@ test('gal(cwe)/min to kg/s', () => {
 });
 
 test('gal(cwe)/min to lb/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -258,7 +258,7 @@ test('gal(cwe)/min to lb/s', () => {
 });
 
 test('gal(cwe)/h to kg/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -269,7 +269,7 @@ test('gal(cwe)/h to kg/s', () => {
 });
 
 test('gal(cwe)/h to lb/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -282,7 +282,7 @@ test('gal(cwe)/h to lb/s', () => {
 });
 
 test('ft3(cwe)/s to kg/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -293,7 +293,7 @@ test('ft3(cwe)/s to kg/s', () => {
 });
 
 test('ft3(cwe)/s to lb/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -306,7 +306,7 @@ test('ft3(cwe)/s to lb/s', () => {
 });
 
 test('ft3(cwe)/min to kg/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -319,7 +319,7 @@ test('ft3(cwe)/min to kg/s', () => {
 });
 
 test('ft3(cwe)/min to lb/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -332,7 +332,7 @@ test('ft3(cwe)/min to lb/s', () => {
 });
 
 test('ft3(cwe)/h to kg/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits
@@ -343,7 +343,7 @@ test('ft3(cwe)/h to kg/s', () => {
 });
 
 test('ft3(cwe)/h to lb/s', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'massFlowRate',
     MassFlowRateSystems,
     MassFlowRateUnits

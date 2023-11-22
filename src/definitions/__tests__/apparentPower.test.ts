@@ -1,11 +1,11 @@
-import configureMeasurements from '../..';
+import { configMeasurements } from '../..';
 import apparentPower, {
   ApparentPowerSystems,
   ApparentPowerUnits,
 } from '../apparentPower';
 
 test('VA to VA', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'apparentPower',
     ApparentPowerSystems,
     ApparentPowerUnits
@@ -16,7 +16,7 @@ test('VA to VA', () => {
 });
 
 test('mVA to mVA', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'apparentPower',
     ApparentPowerSystems,
     ApparentPowerUnits
@@ -27,7 +27,7 @@ test('mVA to mVA', () => {
 });
 
 test('kVA to kVA', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'apparentPower',
     ApparentPowerSystems,
     ApparentPowerUnits
@@ -38,7 +38,7 @@ test('kVA to kVA', () => {
 });
 
 test('MVA to MVA', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'apparentPower',
     ApparentPowerSystems,
     ApparentPowerUnits
@@ -49,7 +49,7 @@ test('MVA to MVA', () => {
 });
 
 test('GVA to GVA', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'apparentPower',
     ApparentPowerSystems,
     ApparentPowerUnits
@@ -60,7 +60,7 @@ test('GVA to GVA', () => {
 });
 
 test('VA to mVA', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'apparentPower',
     ApparentPowerSystems,
     ApparentPowerUnits
@@ -71,7 +71,7 @@ test('VA to mVA', () => {
 });
 
 test('VA to kVA', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'apparentPower',
     ApparentPowerSystems,
     ApparentPowerUnits
@@ -82,7 +82,7 @@ test('VA to kVA', () => {
 });
 
 test('VA to MVA', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'apparentPower',
     ApparentPowerSystems,
     ApparentPowerUnits
@@ -93,7 +93,7 @@ test('VA to MVA', () => {
 });
 
 test('VA to GVA', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'apparentPower',
     ApparentPowerSystems,
     ApparentPowerUnits
@@ -104,7 +104,7 @@ test('VA to GVA', () => {
 });
 
 test('GVA to mVA', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'apparentPower',
     ApparentPowerSystems,
     ApparentPowerUnits
@@ -115,14 +115,14 @@ test('GVA to mVA', () => {
 });
 
 test('MVA to mVA', () => {
-  const convert = configureMeasurements({
+  const convert = configMeasurements({
     apparentPower,
   });
   expect(convert(1).from('MVA').to('mVA')).toBe(1000000000);
 });
 
 test('kVA to mVA', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'apparentPower',
     ApparentPowerSystems,
     ApparentPowerUnits
@@ -133,7 +133,7 @@ test('kVA to mVA', () => {
 });
 
 test('mVA to kVA', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'apparentPower',
     ApparentPowerSystems,
     ApparentPowerUnits
@@ -144,7 +144,7 @@ test('mVA to kVA', () => {
 });
 
 test('mVA to VA', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'apparentPower',
     ApparentPowerSystems,
     ApparentPowerUnits
@@ -155,7 +155,7 @@ test('mVA to VA', () => {
 });
 
 test('kVA to VA', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'apparentPower',
     ApparentPowerSystems,
     ApparentPowerUnits

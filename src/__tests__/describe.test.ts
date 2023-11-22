@@ -1,10 +1,10 @@
-import configureMeasurements from '..';
+import { configMeasurements } from '..';
 import area, { AreaSystems, AreaUnits } from '../definitions/area';
 import mass, { MassSystems, MassUnits } from '../definitions/mass';
 import power, { PowerSystems, PowerUnits } from '../definitions/power';
 
 test('get kg', () => {
-  const convert = configureMeasurements<'mass', MassSystems, MassUnits>({
+  const convert = configMeasurements<'mass', MassSystems, MassUnits>({
     mass,
   });
   const actual = convert().describe('kg'),
@@ -19,7 +19,7 @@ test('get kg', () => {
 });
 
 test('get ac', () => {
-  const convert = configureMeasurements<'area', AreaSystems, AreaUnits>({
+  const convert = configMeasurements<'area', AreaSystems, AreaUnits>({
     area,
   });
   const actual = convert().describe('ac'),
@@ -34,7 +34,7 @@ test('get ac', () => {
 });
 
 test('get PS', () => {
-  const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
+  const convert = configMeasurements<'power', PowerSystems, PowerUnits>({
     power,
   });
   const actual = convert().describe('PS'),
@@ -49,7 +49,7 @@ test('get PS', () => {
 });
 
 test('get hp', () => {
-  const convert = configureMeasurements<'power', PowerSystems, PowerUnits>({
+  const convert = configMeasurements<'power', PowerSystems, PowerUnits>({
     power,
   });
   const actual = convert().describe('hp'),

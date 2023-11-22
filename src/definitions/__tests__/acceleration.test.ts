@@ -1,11 +1,11 @@
-import configureMeasurements from '../..';
+import { configMeasurements } from '../..';
 import acceleration, {
   AccelerationSystems,
   AccelerationUnits,
 } from '../acceleration';
 
 test('g to m/s2', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'acceleration',
     AccelerationSystems,
     AccelerationUnits
@@ -16,7 +16,7 @@ test('g to m/s2', () => {
 });
 
 test('m/s2 to g', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'acceleration',
     AccelerationSystems,
     AccelerationUnits

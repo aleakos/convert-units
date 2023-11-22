@@ -199,7 +199,7 @@ export type AllMeasures =
   | 'volume'
   | 'volumeFlowRate';
 
-const allMeasures: Record<
+export const allMeasures: Record<
   AllMeasures,
   Measure<AllMeasuresSystems, AllMeasuresUnits>
 > = {

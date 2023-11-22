@@ -1,11 +1,11 @@
-import configureMeasurements from '../..';
+import { configMeasurements } from '../..';
 import thermalConductivity, {
   ThermalConductivitySystems,
   ThermalConductivityUnits,
 } from '../thermalConductivity';
 
 test('W/m/K to W/m/K', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'thermalConductivity',
     ThermalConductivitySystems,
     ThermalConductivityUnits
@@ -16,7 +16,7 @@ test('W/m/K to W/m/K', () => {
 });
 
 test('W/m/K to W/cm/K', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'thermalConductivity',
     ThermalConductivitySystems,
     ThermalConductivityUnits
@@ -27,7 +27,7 @@ test('W/m/K to W/cm/K', () => {
 });
 
 test('W/m/K to BTU/h/ft/F', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'thermalConductivity',
     ThermalConductivitySystems,
     ThermalConductivityUnits
@@ -40,7 +40,7 @@ test('W/m/K to BTU/h/ft/F', () => {
 });
 
 test('W/cm/K to W/m/K', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'thermalConductivity',
     ThermalConductivitySystems,
     ThermalConductivityUnits
@@ -51,7 +51,7 @@ test('W/cm/K to W/m/K', () => {
 });
 
 test('W/cm/K to BTU/h/ft/F', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'thermalConductivity',
     ThermalConductivitySystems,
     ThermalConductivityUnits
@@ -64,7 +64,7 @@ test('W/cm/K to BTU/h/ft/F', () => {
 });
 
 test('BTU/h/ft/F to W/m/K', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'thermalConductivity',
     ThermalConductivitySystems,
     ThermalConductivityUnits
@@ -77,7 +77,7 @@ test('BTU/h/ft/F to W/m/K', () => {
 });
 
 test('BTU/h/ft/F to W/cm/K', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'thermalConductivity',
     ThermalConductivitySystems,
     ThermalConductivityUnits

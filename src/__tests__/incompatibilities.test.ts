@@ -1,5 +1,5 @@
-import configureMeasurements, { Measure, Unit } from '..';
-import allMeasures from '../definitions/all';
+import { configMeasurements, Measure, Unit } from '..';
+import { allMeasures } from '../definitions/all';
 import length, { LengthSystems, LengthUnits } from '../definitions/length';
 import mass, { MassSystems, MassUnits } from '../definitions/mass';
 import volume, { VolumeSystems, VolumeUnits } from '../definitions/volume';
@@ -8,7 +8,7 @@ test('l to kg throws', () => {
   type Measures = 'volume' | 'mass';
   type Systems = VolumeSystems | MassSystems;
   type Units = VolumeUnits | MassUnits;
-  const convert = configureMeasurements<Measures, Systems, Units>({
+  const convert = configMeasurements<Measures, Systems, Units>({
     volume,
     mass,
   });
@@ -23,7 +23,7 @@ test('fl-oz to oz throws', () => {
   type Measures = 'volume' | 'mass';
   type Systems = VolumeSystems | MassSystems;
   type Units = VolumeUnits | MassUnits;
-  const convert = configureMeasurements<Measures, Systems, Units>({
+  const convert = configMeasurements<Measures, Systems, Units>({
     volume,
     mass,
   });
@@ -36,7 +36,7 @@ test('kg to fl-oz throws', () => {
   type Measures = 'volume' | 'mass';
   type Systems = VolumeSystems | MassSystems;
   type Units = VolumeUnits | MassUnits;
-  const convert = configureMeasurements<Measures, Systems, Units>({
+  const convert = configMeasurements<Measures, Systems, Units>({
     volume,
     mass,
   });
@@ -49,7 +49,7 @@ test('kg to ft throws', () => {
   type Measures = 'length' | 'mass';
   type Systems = LengthSystems | MassSystems;
   type Units = LengthUnits | MassUnits;
-  const convert = configureMeasurements<Measures, Systems, Units>({
+  const convert = configMeasurements<Measures, Systems, Units>({
     length,
     mass,
   });
@@ -59,7 +59,7 @@ test('kg to ft throws', () => {
 });
 
 test('kg to nonexistant unit throws', () => {
-  const convert = configureMeasurements<'mass', MassSystems, MassUnits>({
+  const convert = configMeasurements<'mass', MassSystems, MassUnits>({
     mass,
   });
   expect(() => {
@@ -70,7 +70,7 @@ test('kg to nonexistant unit throws', () => {
 });
 
 test('nonexistant unit to kg throws', () => {
-  const convert = configureMeasurements<'mass', MassSystems, MassUnits>({
+  const convert = configMeasurements<'mass', MassSystems, MassUnits>({
     mass,
   });
   expect(() => {
@@ -81,7 +81,7 @@ test('nonexistant unit to kg throws', () => {
 });
 
 test('.to before .from throws', () => {
-  const convert = configureMeasurements<'mass', MassSystems, MassUnits>({
+  const convert = configMeasurements<'mass', MassSystems, MassUnits>({
     mass,
   });
   expect(() => {
@@ -90,14 +90,14 @@ test('.to before .from throws', () => {
 });
 
 test('.toBest before .from throws', () => {
-  const convert = configureMeasurements({});
+  const convert = configMeasurements({});
   expect(() => {
     convert(4).toBest();
   }).toThrow();
 });
 
 test('.describe throws is unit abbr is not found', () => {
-  const convert = configureMeasurements({});
+  const convert = configMeasurements({});
   expect(() => {
     convert().describe('no-a-unit');
   }).toThrow();
@@ -137,7 +137,7 @@ test('Missing anchors should throw an error', () => {
     },
   };
 
-  const convert = configureMeasurements<'AB', TestSystems, TestUnits>({
+  const convert = configMeasurements<'AB', TestSystems, TestUnits>({
     AB: measures,
   });
 
@@ -200,7 +200,7 @@ test('Missing system to system anchor should throw an error', () => {
     },
   };
 
-  const convert = configureMeasurements<'AB', TestSystems, TestUnits>({
+  const convert = configMeasurements<'AB', TestSystems, TestUnits>({
     AB: measures,
   });
 
@@ -209,10 +209,10 @@ test('Missing system to system anchor should throw an error', () => {
   }).toThrow();
 });
 
-test('passing no measures to configureMeasurements should cause calling convert to throw an error', () => {
+test('passing no measures to configMeasurements should cause calling convert to throw an error', () => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-expect-error
-  const convert = configureMeasurements();
+  const convert = configMeasurements();
   expect(() => {
     convert();
   }).toThrow();
@@ -222,7 +222,7 @@ test('Calling from again on the same instance should throw an error', () => {
   // Note: I don't like that it throws an error in this case
   // I would prefer it to clear the previous state so that the same object
   // can be used again
-  const convert = configureMeasurements(allMeasures);
+  const convert = configMeasurements(allMeasures);
   const state = convert(4).from('m');
   state.to('cm');
   expect(() => {
@@ -299,7 +299,7 @@ test('Missing origin anchor should throw an error', () => {
     },
   };
 
-  const convert = configureMeasurements<'AB', TestSystems, TestUnits>({
+  const convert = configMeasurements<'AB', TestSystems, TestUnits>({
     AB: measures,
   });
 

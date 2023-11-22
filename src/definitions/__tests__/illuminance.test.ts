@@ -1,11 +1,11 @@
-import configureMeasurements from '../..';
+import { configMeasurements } from '../..';
 import illuminance, {
   IlluminanceSystems,
   IlluminanceUnits,
 } from '../illuminance';
 
 test('ft-cd to lx', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'illuminance',
     IlluminanceSystems,
     IlluminanceUnits
@@ -16,7 +16,7 @@ test('ft-cd to lx', () => {
 });
 
 test('lx to ft-cd', () => {
-  const convert = configureMeasurements<
+  const convert = configMeasurements<
     'illuminance',
     IlluminanceSystems,
     IlluminanceUnits
